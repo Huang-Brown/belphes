@@ -2,29 +2,51 @@
 [![DOI](https://zenodo.org/badge/21390046.svg)](https://zenodo.org/badge/latestdoi/21390046)
 [![Conda Version](https://img.shields.io/conda/vn/conda-forge/delphes.svg)](https://anaconda.org/conda-forge/delphes)
 
-# Delphes
+# Belphes
 
-Delphes is a C++ framework, performing a fast multipurpose detector response simulation.
+Author: Jason Huang (jiashu_huang@brown.edu)
+Department of Physics, 🅱️rown University
 
-More details can be found on the Delphes website https://delphes.github.io
+🅱️elphes is a branch of Delphes—a C++ framework performing a fast multipurpose detector response simulation (see https://delphes.github.io). For each jet object, it samples
+a pseudo b-tagging score.
 
-# Quick start with Delphes
+# Quick start with Belphes
 
-Commands to get the code:
-
+This branch assumes that you are using root and other softwares from some CMSSW.
+After you have downloaded the files, go to a SCRAM-based area (CMSSW_XX_X_X/src)
+and run 
 ```
-wget http://cp3.irmp.ucl.ac.be/downloads/Delphes-3.5.0.tar.gz
-
-tar -zxf Delphes-3.5.0.tar.gz
+scram tool info fmt
 ```
 
-Commands to compile the code:
-
+For example, for CMSSW_15_0_0, the system produces the following:
 ```
-cd Delphes-3.5.0
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Name : fmt
+Version : 10.2.1-e35fd1db5eb3abc8ac0452e8ee427196
+Revision : 1
+++++++++++++++++++++
 
-make
+FMT_BASE=/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/fmt/10.2.1-e35fd1db5eb3abc8ac0452e8ee427196
+INCLUDE=/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/fmt/10.2.1-e35fd1db5eb3abc8ac0452e8ee427196/include
+LIB=fmt
+LIBDIR=/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/fmt/10.2.1-e35fd1db5eb3abc8ac0452e8ee427196/lib
+ROOT_INCLUDE_PATH=/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/fmt/10.2.1-e35fd1db5eb3abc8ac0452e8ee427196/include
 ```
+
+Then, go into Makefile. Under the first comment, paste `INCLUDE` and `LIBDIR`:
+```
+CXXFLAGS += -I{$INCLUDE}
+LDFLAGS += -L{$LIBDIR} -lfmt
+```
+
+Also note that Makefile has been modified 
+```
+CXXFLAGS += -std=c++20 -I$(subst :, -I,$(CMSSW_FWLITE_INCLUDE_PATH)) ## allow c++20
+```
+so it may be compiled using a new C++ standard.
+
+Now you can `make`. Do NOT do `./configure`, as it will reset Makefile. 
 
 Finally, we can run Delphes:
 
@@ -70,31 +92,7 @@ source /cvmfs/sft.cern.ch/lcg/views/LCG_105/x86_64-el9-gcc12-opt/setup.sh
 make
 ```
 
-# Install Delphes from conda-forge
-
-Delphes is also available as a pre-built binary package from [conda-forge](https://anaconda.org/conda-forge/delphes).
-
-The scripts used to build this package are available at
-
-https://github.com/conda-forge/delphes-feedstock
-
-Command to install the package in a conda environment:
-
-```
-conda install --channel conda-forge delphes
-```
-
-Commands to run the Z->ee example from the 'Quick start' section above in a conda environment:
-
-```
-wget http://cp3.irmp.ucl.ac.be/downloads/z_ee.hep.gz
-gunzip z_ee.hep.gz
-DelphesSTDHEP $CONDA_PREFIX/cards/delphes_card_CMS.tcl delphes_output.root z_ee.hep
-```
-
-where the `CONDA_PREFIX` environment variable is automatically set when the conda environment is activated.
-
-The `cards` and `examples` directories from this repository are also installed under `$CONDA_PREFIX`.
+<!-- 
 
 # Simple analysis using TTree::Draw
 
@@ -196,4 +194,4 @@ or
 
 ```
 root -l examples/Example1.C'("delphes_output.root")'
-```
+``` -->
