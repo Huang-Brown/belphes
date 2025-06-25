@@ -13,8 +13,14 @@ a pseudo b-tagging score.
 ## Quick start with Belphes
 
 This branch assumes that you are using root and other softwares from some CMSSW.
-After you have downloaded the files, go to a SCRAM-based area (CMSSW_XX_X_X/src)
-and run 
+After you have downloaded the files, you should first set up your CMS environment through 
+```
+source /cvmfs/cms.cern.ch/cmsset_default.sh
+cd somewhere/CMSSW_XX_X_X/src
+cmsenv
+```
+
+Then, go to a SCRAM-based area (CMSSW_XX_X_X/src) and run 
 ```
 scram tool info fmt
 ```
@@ -41,13 +47,12 @@ CXXFLAGS += -I{$INCLUDE}
 LDFLAGS += -L{$LIBDIR} -lfmt
 ```
 
-Also note that Makefile has been modified
+Also note that Makefile has been modified for newer C++ standards:
 ```
 CXXFLAGS += -std=c++20 -I$(subst :, -I,$(CMSSW_FWLITE_INCLUDE_PATH)) ## allow c++20
 ```
-so it may be compiled using a new C++ standard.
 
-Now you can `make`. Do *NOT* do `./configure`, as it will reset Makefile. 
+Now you can `make`. Do *NOT* do `./configure` before `make`, as it will reset Makefile. 
 
 Finally, we can run Delphes:
 
@@ -65,7 +70,14 @@ Command line parameters:
   with no input_file, or when input_file is -, read standard input.
 ```
 
-Let's simulate some Z->ee events:
+For example:
+```
+[ -f "./belphes-examples/pp_z_bb.root" ] && rm "./belphes-examples/pp_z_bb.root"
+./DelphesHepMC2 ./cards/delphes_card_CMS.tcl ./belphes-examples/pp_z_bb.root ./belphes-examples/pp_z_bb.hepmc
+```
+(For MadGraph generated files, use `./DelphesHepMC2`, not `./DelphesHepMC3`.)
+
+<!-- Let's simulate some Z->ee events:
 
 ```
 wget http://cp3.irmp.ucl.ac.be/downloads/z_ee.hep.gz
@@ -77,7 +89,7 @@ or
 
 ```
 curl -s http://cp3.irmp.ucl.ac.be/downloads/z_ee.hep.gz | gunzip | ./DelphesSTDHEP cards/delphes_card_CMS.tcl delphes_output.root
-```
+``` -->
 
 For the original documentation of Delphes, please visit https://delphes.github.io/workbook
 
