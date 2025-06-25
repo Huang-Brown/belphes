@@ -4,12 +4,15 @@
 
 # Belphes
 
-Author: Jason Huang (jiashu_huang@brown.edu) Department of Physics, 🅱️rown University
+Author: Jason Huang (jiashu_huang@brown.edu) 
+
+Department of Physics, Brown University
+
 
 🅱️elphes is a branch of Delphes—a C++ framework performing a fast multipurpose detector response simulation (see https://delphes.github.io). For each jet object, it samples
 a pseudo b-tagging score.
 
-# Quick start with Belphes
+## Quick start with Belphes
 
 This branch assumes that you are using root and other softwares from some CMSSW.
 After you have downloaded the files, go to a SCRAM-based area (CMSSW_XX_X_X/src)
@@ -33,19 +36,20 @@ LIBDIR=/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/fmt/10.2.1-e35fd1db5eb3abc8ac
 ROOT_INCLUDE_PATH=/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/fmt/10.2.1-e35fd1db5eb3abc8ac0452e8ee427196/include
 ```
 
-Then, go into Makefile. Under the first comment, paste `INCLUDE` and `LIBDIR`:
+Then, go into Makefile. Under the first comment, paste what follows after `INCLUDE`
+ and `LIBDIR`:
 ```
 CXXFLAGS += -I{$INCLUDE}
 LDFLAGS += -L{$LIBDIR} -lfmt
 ```
 
-Also note that Makefile has been modified 
+Also note that Makefile has been modified
 ```
 CXXFLAGS += -std=c++20 -I$(subst :, -I,$(CMSSW_FWLITE_INCLUDE_PATH)) ## allow c++20
 ```
 so it may be compiled using a new C++ standard.
 
-Now you can `make`. Do NOT do `./configure`, as it will reset Makefile. 
+Now you can `make`. Do ''NOT'' do `./configure`, as it will reset Makefile. 
 
 Finally, we can run Delphes:
 
@@ -77,9 +81,9 @@ or
 curl -s http://cp3.irmp.ucl.ac.be/downloads/z_ee.hep.gz | gunzip | ./DelphesSTDHEP cards/delphes_card_CMS.tcl delphes_output.root
 ```
 
-For more detailed documentation, please visit https://delphes.github.io/workbook
+For the original documentation of Delphes, please visit https://delphes.github.io/workbook
 
-# Configure Delphes on lxplus.cern.ch
+<!-- ## Configure Delphes on lxplus.cern.ch
 
 ```
 git clone https://github.com/delphes/delphes Delphes
@@ -89,7 +93,7 @@ cd Delphes
 source /cvmfs/sft.cern.ch/lcg/views/LCG_105/x86_64-el9-gcc12-opt/setup.sh
 
 make
-```
+``` -->
 
 <!-- 
 
