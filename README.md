@@ -4,9 +4,7 @@
 
 # Belphes
 
-Author: Jason Huang (jiashu_huang@brown.edu) 
-
-Department of Physics, Brown University
+**Author**: Jason Huang (jiashu_huang@brown.edu), Department of Physics, Brown University
 
 
 🅱️elphes is a branch of Delphes—a C++ framework performing a fast multipurpose detector response simulation (see https://delphes.github.io). For each jet object, it samples
@@ -49,7 +47,7 @@ CXXFLAGS += -std=c++20 -I$(subst :, -I,$(CMSSW_FWLITE_INCLUDE_PATH)) ## allow c+
 ```
 so it may be compiled using a new C++ standard.
 
-Now you can `make`. Do ''NOT'' do `./configure`, as it will reset Makefile. 
+Now you can `make`. Do *NOT* do `./configure`, as it will reset Makefile. 
 
 Finally, we can run Delphes:
 
