@@ -6,9 +6,8 @@
 
 **Author**: Jason Huang (jiashu_huang@brown.edu), Department of Physics, Brown University
 
-
 🅱️elphes is a branch of Delphes—a C++ framework performing a fast multipurpose detector response simulation (see https://delphes.github.io). For each jet object, it samples
-a pseudo b-tagging score.
+a pseudo b-tagging score. *A la ***belle phys***ique!*
 
 ## Quick start with Belphes
 
