@@ -60,9 +60,9 @@ Command line parameters:
 ./DelphesHepMC2 config_file output_file [input_file(s)]
 ```
 where
-* config_file - configuration file in Tcl format
-* output_file - output file in ROOT format
-* input_file(s) - input file(s) in HepMC format
+* `config_file` - configuration file in Tcl format
+* `output_file` - output file in ROOT format
+* `input_file(s)` - input file(s) in HepMC format
 
 With no input_file, or when input_file is -, Delphes reads standard input.
 
