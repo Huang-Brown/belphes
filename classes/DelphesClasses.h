@@ -422,6 +422,8 @@ public:
   TLorentzVector P4() const;
   TLorentzVector Area;
 
+  Float_t Jet_btagDeepFlavB; // pseudo b-tag score, added on 25-06-26
+
   ClassDef(Jet, 5)
 };
 
@@ -712,6 +714,8 @@ public:
   UInt_t BTag;
   UInt_t BTagAlgo;
   UInt_t BTagPhys;
+
+  Float_t Jet_btagDeepFlavB;
 
   UInt_t TauTag;
   Float_t TauWeight;

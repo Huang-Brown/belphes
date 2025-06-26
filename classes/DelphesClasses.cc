@@ -262,7 +262,8 @@ Candidate::Candidate() :
   ExclYmerge56(0),
   ParticleDensity(0),
   fFactory(0),
-  fArray(0)
+  fArray(0),
+  Jet_btagDeepFlavB(0)
 {
   int i;
   Edges[0] = 0.0;
@@ -484,6 +485,8 @@ void Candidate::Copy(TObject &obj) const
   object.fFactory = fFactory;
   object.fArray = 0;
 
+  object.Jet_btagDeepFlavB = Jet_btagDeepFlavB;
+
   // copy cluster timing info
   copy(ECalEnergyTimePairs.begin(), ECalEnergyTimePairs.end(), back_inserter(object.ECalEnergyTimePairs));
 
@@ -626,4 +629,6 @@ void Candidate::Clear(Option_t * /*option*/)
   NSubJetsSoftDropped = 0;
 
   fArray = 0;
+
+  Jet_btagDeepFlavB = 0;
 }
