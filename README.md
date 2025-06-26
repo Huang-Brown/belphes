@@ -54,28 +54,26 @@ CXXFLAGS += -std=c++20 -I$(subst :, -I,$(CMSSW_FWLITE_INCLUDE_PATH)) ## allow c+
 
 Now you can `make`. Do *NOT* do `./configure` before `make`, as it will reset Makefile. 
 
-Finally, we can run Delphes:
-
-```
-./DelphesHepMC3
-```
-
+Finally, we can run Delphes. For MadGraph generated files, use `./DelphesHepMC2`. 
 Command line parameters:
-
 ```
-./DelphesHepMC3 config_file output_file [input_file(s)]
-  config_file - configuration file in Tcl format
-  output_file - output file in ROOT format,
-  input_file(s) - input file(s) in HepMC format,
-  with no input_file, or when input_file is -, read standard input.
+./DelphesHepMC2 config_file output_file [input_file(s)]
 ```
+where
+* config_file - configuration file in Tcl format
+* output_file - output file in ROOT format
+* input_file(s) - input file(s) in HepMC format
+With no input_file, or when input_file is -, Delphes reads standard input.
 
 For example:
 ```
 [ -f "./belphes-examples/pp_z_bb.root" ] && rm "./belphes-examples/pp_z_bb.root"
 ./DelphesHepMC2 ./cards/delphes_card_CMS.tcl ./belphes-examples/pp_z_bb.root ./belphes-examples/pp_z_bb.hepmc
 ```
-(For MadGraph generated files, use `./DelphesHepMC2`, not `./DelphesHepMC3`.)
+
+## What has changed?
+
+
 
 <!-- Let's simulate some Z->ee events:
 
