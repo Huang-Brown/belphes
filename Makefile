@@ -394,6 +394,7 @@ tmp/modules/ModulesDict.$(SrcSuf): \
 	modules/UniqueObjectFinder.h \
 	modules/TrackCountingBTagging.h \
 	modules/BTagging.h \
+	modules/PseudoBTagScore.h \
 	modules/TauTagging.h \
 	modules/TrackCountingTauTagging.h \
 	modules/TreeWriter.h \
@@ -661,6 +662,11 @@ tmp/modules/BTagging.$(ObjSuf): \
 	classes/DelphesClasses.h \
 	classes/DelphesFactory.h \
 	classes/DelphesFormula.h
+tmp/modules/PseudoBTagScore.$(ObjSuf): \
+	modules/PseudoBTagScore.$(SrcSuf) \
+	modules/PseudoBTagScore.h \
+	classes/DelphesFactory.h \
+	classes/DelphesClasses.h
 tmp/modules/BeamSpotFilter.$(ObjSuf): \
 	modules/BeamSpotFilter.$(SrcSuf) \
 	modules/BeamSpotFilter.h \
@@ -2283,6 +2289,10 @@ external/fastjet/ClusterSequenceVoronoiArea.hh: \
 	@touch $@
 modules/BTagging.h: \
 	classes/DelphesModule.h
+	@touch $@
+modules/PseudoBTagScore.h: \
+	classes/DelphesModule.h \
+	classes/DelphesClasses.h
 	@touch $@
 modules/RecoPuFilter.h: \
 	classes/DelphesModule.h
