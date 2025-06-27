@@ -51,6 +51,7 @@
 #include "modules/UniqueObjectFinder.h"
 #include "modules/TrackCountingBTagging.h"
 #include "modules/BTagging.h"
+#include "modules/PseudoBTagScore.h" // 2025-06-27
 #include "modules/TauTagging.h"
 #include "modules/TrackCountingTauTagging.h"
 #include "modules/TreeWriter.h"
@@ -115,6 +116,7 @@
 #pragma link C++ class UniqueObjectFinder+;
 #pragma link C++ class TrackCountingBTagging+;
 #pragma link C++ class BTagging+;
+#pragma link C++ class PseudoBTagScore+;
 #pragma link C++ class TauTagging+;
 #pragma link C++ class TrackCountingTauTagging+;
 #pragma link C++ class TreeWriter+;
