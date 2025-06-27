@@ -1261,6 +1261,7 @@ DELPHES_OBJ +=  \
 	tmp/modules/PhotonID.$(ObjSuf) \
 	tmp/modules/PileUpJetID.$(ObjSuf) \
 	tmp/modules/PileUpMerger.$(ObjSuf) \
+	tmp/modules/PseudoBTagScore.$(ObjSuf) \
 	tmp/modules/RecoPuFilter.$(ObjSuf) \
 	tmp/modules/SimpleCalorimeter.$(ObjSuf) \
 	tmp/modules/StatusPidFilter.$(ObjSuf) \
