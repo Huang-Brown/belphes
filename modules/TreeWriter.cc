@@ -845,6 +845,9 @@ void TreeWriter::ProcessJets(ExRootTreeBranch *branch, TObjArray *array)
 
     entry->EhadOverEem = ecalEnergy > 0.0 ? hcalEnergy / ecalEnergy : 999.9;
 
+    // PseudoBTagScore: Jet_btagDeepFlavB
+    entry->Jet_btagDeepFlavB = candidate->Jet_btagDeepFlavB;
+
     //---   Pile-Up Jet ID variables ----
 
     entry->NCharged = candidate->NCharged;
