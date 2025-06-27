@@ -56,7 +56,7 @@ I am using the following `make` command:
 ```
 make -j"$(nproc)" HAS_PYTHIA8=1 VERBOSE=1 \
   &> build_delphes_[DATE].log
-``
+```
 
 Finally, we can run Delphes. For MadGraph generated files, use `./DelphesHepMC2`. 
 Command line parameters:
