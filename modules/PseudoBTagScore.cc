@@ -8,6 +8,7 @@
  */
 
 #include "modules/PseudoBTagScore.h"
+ClassImp(PseudoBTagScore)
 
 #include "classes/DelphesFactory.h"
 #include "classes/DelphesClasses.h"
@@ -24,7 +25,12 @@
 
 // Constructor / Destructor
 PseudoBTagScore::PseudoBTagScore() : 
-  fItJetInputArray(0)
+  fItJetInputArray(nullptr),
+  fJetInputArray(nullptr),
+  fFile_b(nullptr), 
+  fFile_nonb(nullptr),
+  fNbinsPT(0),
+  fNbinsAbsEta(0)
 {
 }
 
@@ -39,8 +45,8 @@ PseudoBTagScore::~PseudoBTagScore()
 void PseudoBTagScore::Init() 
 {
   // load the files
-  const char *file_b_dir    = GetString("Jet_btagDeepFlavB_file_b");
-  const char *file_nonb_dir = GetString("Jet_btagDeepFlavB_file_nonb");
+  const char *file_b_dir    = GetString("Jet_btagDeepFlavB_file_b",    "");
+  const char *file_nonb_dir = GetString("Jet_btagDeepFlavB_file_nonb", "");
 
   fFile_b    = new TFile(file_b_dir,     "READ");
   fFile_nonb = new TFile(file_nonb_dir,  "READ");
@@ -150,8 +156,8 @@ void PseudoBTagScore::Process()
   {
     // obtain the pt and eta of the jet 
     const TLorentzVector &jetMomentum = jet->Momentum; // take 4-momentum of jet; TLorentzVector is outdated
-    jet_pt    = jetMomentum.Pt();
-    jet_abspt = std::abs(jetMomentum.Eta()); // we use abs eta because of axial symmetry in the detector
+    jet_pt     = jetMomentum.Pt();
+    jet_abseta = std::abs(jetMomentum.Eta()); // we use abs eta because of axial symmetry in the detector
 
     // pre-set the bin
     jet_pt_bin     = -1;
