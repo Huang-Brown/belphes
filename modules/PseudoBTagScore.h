@@ -28,21 +28,18 @@ public:
   void Finish();   ///< Clean up
 
 private:
-  TIterator       *fItJetInputArray; //!
-  const TObjArray *fJetInputArray; //!
+  TIterator            *fItJetInputArray; //!
+  const TObjArray      *fJetInputArray;   //!
 
-  // TFile           *fFile;       ///< ROOT file holding histogram
-  // TH1D            *fHistGauss;  ///< Histogram to sample N(0,1)
+  TFile                *fFile_b;          //!
+  TFile                *fFile_nonb;       //!
+
+  std::vector<Float_t>  fPtBins;          //!
+  std::vector<Float_t>  fAbsEtaBins;      //!
+  Int_t                 fNbinsPT;         //!
+  Int_t                 fNbinsAbsEta;     //!
 
   ClassDef(PseudoBTagScore, 1)
-
-  /* 
-    For reference, BTagging.h included the following if statement for an 
-    "fEfficiencyMap"
-  */
-  // #if !defined(__CINT__) && !defined(__CLING__)
-  // std::map<std::vector<Float_t>, TH1F *> fEfficiencyMap; //!
-  // #endif
 };
 
 #endif

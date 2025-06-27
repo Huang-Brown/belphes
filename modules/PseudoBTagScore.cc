@@ -35,23 +35,44 @@ PseudoBTagScore::~PseudoBTagScore() {
 
 void PseudoBTagScore::Init() 
 {
-  // load the file 
-  const char* Jet_btagDeepFlavB_file_b, Jet_btagDeepFlavB_file_nonb;
-  Jet_btagDeepFlavB_file_b    = GetString("Jet_btagDeepFlavB_file_b");
-  Jet_btagDeepFlavB_file_nonb = GetString("Jet_btagDeepFlavB_file_nonb");
+  // load the files
+  const char* file_b_dir, file_nonb_dir;
 
-  if(!Jet_btagDeepFlavB_file_b || Jet_btagDeepFlavB_file_b->IsZombie())
-    throw std::runtime_error(Form("PseudoBTagScore: cannot open %s", Jet_btagDeepFlavB_file_b));
+  file_b_dir    = GetString("Jet_btagDeepFlavB_file_b");
+  file_nonb_dir = GetString("Jet_btagDeepFlavB_file_nonb");
 
-  if(!Jet_btagDeepFlavB_file_nonb || Jet_btagDeepFlavB_file_b->IsZombie())
-    throw std::runtime_error(Form("PseudoBTagScore: cannot open %s", Jet_btagDeepFlavB_file_nonb));
+  fFile_b    = new TFile(file_b_dir,     "READ");
+  fFile_nonb = new TFile(file_nonb_dir,  "READ");
 
-  // read bin edges, cache TH1* pointers, seed RNG...
+  if(!fFile_b || fFile_b->IsZombie())
+    throw std::runtime_error(Form("PseudoBTagScore: cannot open %s", file_b_dir));
+
+  if(!fFile_nonb || fFile_nonb->IsZombie())
+    throw std::runtime_error(Form("PseudoBTagScore: cannot open %s", file_nonb_dir));
+
+  //----------------------------------------------------------------------------
+
+  // read bin edges - taken from ParticleDensity.cc
+  ExRootConfParam paramPT = GetParam("PTBins");
+  Int_t sizePT = paramPT.GetSize();
+  fPtBins.reserve(sizePT);
+  for(Int_t i = 0; i < sizePT; ++i) {
+    fPtBins.push_back(paramPT[i].GetDouble());
+  }
+  fNbinsPT = sizePT - 1;
+
+  ExRootConfParam paramAbsEta = GetParam("AbsEtaBins");
+  Int_t sizeAbsEta = paramAbsEta.GetSize();
+  fAbsEtaBins.reserve(sizeAbsEta);
+  for(Int_t i = 0; i < sizeAbsEta; ++i) {
+    fAbsEtaBins.push_back(paramAbsEta[i].GetDouble());
+  }
+  fNbinsAbsEta = sizeAbsEta - 1;
 
   //----------------------------------------------------------------------------
 
   // import input array 
-  fJetInputArray = ImportArray(GetString("JetInputArray")); // need to decide default variable
+  fJetInputArray   = ImportArray(GetString("JetInputArray", "FastJetFinder/jets"));
   fItJetInputArray = fJetInputArray->MakeIterator();
 
 }
@@ -63,9 +84,17 @@ void PseudoBTagScore::Finish()
   // close off the input jet array
   if (fItJetInputArray) delete fItJetInputArray;
 
-  // also need to close off all histograms
-  if (Jet_btagDeepFlavB_file_b)    Jet_btagDeepFlavB_file_b->Close();
-  if (Jet_btagDeepFlavB_file_nonb) Jet_btagDeepFlavB_file_nonb->Close();
+  // also need to close off all files
+  if (fFile_b) 
+  {
+    fFile_b->Close();
+    delete fFile_b;     fFile_b = nullptr;
+  }
+  if (fFile_nonb) 
+  {
+    fFile_nonb->Close();
+    delete fFile_nonb;  fFile_nonb = nullptr;
+  }
 }
 
 //------------------------------------------------------------------------------
