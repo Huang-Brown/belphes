@@ -10,12 +10,12 @@
  *
  */
 
+#include <vector>          // for std::vector
 #include "classes/DelphesModule.h"
 #include "classes/DelphesClasses.h"   // for the Jet class
 
+class TH1;                // forward-declare ROOT histogram
 class TObjArray;
-class DelphesFormula;
-// class TH1D; // needed for distributions?
 
 class PseudoBTagScore : public DelphesModule 
 {
@@ -38,6 +38,9 @@ private:
   std::vector<Float_t>  fAbsEtaBins;      //!
   Int_t                 fNbinsPT;         //!
   Int_t                 fNbinsAbsEta;     //!
+
+  std::vector<std::vector<TH1*>> fHists_b;    //!
+  std::vector<std::vector<TH1*>> fHists_nonb; //!
 
   ClassDef(PseudoBTagScore, 1)
 };
