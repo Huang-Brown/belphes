@@ -424,7 +424,7 @@ public:
 
   Float_t Jet_btagDeepFlavB; // pseudo b-tag score, added on 25-06-26
 
-  ClassDef(Jet, 5)
+  ClassDef(Jet, 6)
 };
 
 //---------------------------------------------------------------------------
