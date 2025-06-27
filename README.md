@@ -39,7 +39,7 @@ LIBDIR=/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/fmt/10.2.1-e35fd1db5eb3abc8ac
 ROOT_INCLUDE_PATH=/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/fmt/10.2.1-e35fd1db5eb3abc8ac0452e8ee427196/include
 ```
 
-Then, go into Makefile. Under the first comment, paste what follows after `INCLUDE`
+Then, go into `belphes/Makefile`. Under the first comment, paste what follows after `INCLUDE`
  and `LIBDIR`:
 ```
 CXXFLAGS += -I{$INCLUDE}
@@ -52,6 +52,11 @@ CXXFLAGS += -std=c++20 -I$(subst :, -I,$(CMSSW_FWLITE_INCLUDE_PATH)) ## allow c+
 ```
 
 Now you can `make`. Do *NOT* do `./configure` before `make`, as it will reset Makefile. 
+I am using the following `make` command:
+```
+make -j"$(nproc)" HAS_PYTHIA8=1 VERBOSE=1 \
+  &> build_delphes_[DATE].log
+``
 
 Finally, we can run Delphes. For MadGraph generated files, use `./DelphesHepMC2`. 
 Command line parameters:
@@ -73,6 +78,11 @@ For example:
 
 ## What has changed?
 
+I wrote a new class `PseudoBTagScore` (under `belphes/modules`). 
+
+The following files have also been modified:
+- `Makefile`, `modules/ModulesLinkDef.h`: to compile PseudoBTagScore
+- `modules/TreeWriter`, `classes/DelphesClasses`: to include Jet_btagDeepFlavB as a class member variable
 
 
 <!-- Let's simulate some Z->ee events:
