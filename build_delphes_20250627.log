@@ -1,0 +1,951 @@
+>> Generating tmp/classes/ClassesDict.cc
+>> Generating tmp/external/ExRootAnalysis/ExRootAnalysisDict.cc
+>> Compiling classes/DelphesClasses.cc
+>> Compiling classes/DelphesCscClusterFormula.cc
+>> Compiling classes/DelphesCylindricalFormula.cc
+>> Compiling classes/DelphesFactory.cc
+>> Compiling classes/DelphesFormula.cc
+>> Compiling classes/DelphesHepMC2Reader.cc
+>> Compiling classes/DelphesHepMC3Reader.cc
+>> Compiling classes/DelphesLHEFReader.cc
+>> Compiling classes/DelphesPileUpReader.cc
+>> Compiling classes/DelphesModule.cc
+>> Compiling classes/DelphesPileUpWriter.cc
+>> Compiling classes/DelphesSTDHEPReader.cc
+>> Compiling classes/DelphesTF2.cc
+>> Compiling classes/DelphesStream.cc
+>> Compiling classes/DelphesXDRReader.cc
+>> Compiling classes/DelphesXDRWriter.cc
+>> Compiling external/ExRootAnalysis/ExRootConfReader.cc
+>> Compiling external/ExRootAnalysis/ExRootFilter.cc
+>> Compiling external/ExRootAnalysis/ExRootProgressBar.cc
+>> Compiling external/ExRootAnalysis/ExRootResult.cc
+In file included from classes/DelphesClasses.cc:29:
+./classes/DelphesClasses.h: In constructor 'Candidate::Candidate()':
+./classes/DelphesClasses.h:847:14: warning: 'Candidate::fArray' will be initialized after [-Wreorder]
+  847 |   TObjArray *fArray; //!
+      |              ^~~~~~
+./classes/DelphesClasses.h:718:11: warning:   'Float_t Candidate::Jet_btagDeepFlavB' [-Wreorder]
+  718 |   Float_t Jet_btagDeepFlavB;
+      |           ^~~~~~~~~~~~~~~~~
+classes/DelphesClasses.cc:211:1: warning:   when initialized here [-Wreorder]
+  211 | Candidate::Candidate() :
+      | ^~~~~~~~~
+>> Compiling external/ExRootAnalysis/ExRootTreeBranch.cc
+>> Compiling external/ExRootAnalysis/ExRootTask.cc
+external/ExRootAnalysis/ExRootConfReader.cc: In constructor 'ExRootConfReader::ExRootConfReader()':
+external/ExRootAnalysis/ExRootConfReader.cc:35:36: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+   35 |   Tcl_CreateObjCommand(fTclInterp, "module", ModuleObjCmdProc, this, 0);
+      |                                    ^~~~~~~~
+external/ExRootAnalysis/ExRootConfReader.cc:36:36: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+   36 |   Tcl_CreateObjCommand(fTclInterp, "source", SourceObjCmdProc, this, 0);
+      |                                    ^~~~~~~~
+external/ExRootAnalysis/ExRootConfReader.cc: In function 'int ModuleObjCmdProc(ClientData, Tcl_Interp*, int, Tcl_Obj* const*)':
+external/ExRootAnalysis/ExRootConfReader.cc:195:39: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+  195 |     Tcl_WrongNumArgs(interp, 1, objv, "className moduleName ?arg...?");
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+external/ExRootAnalysis/ExRootConfReader.cc:206:63: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+  206 |     Tcl_ListObjAppendElement(interp, object, Tcl_NewStringObj("namespace", -1));
+      |                                                               ^~~~~~~~~~~
+external/ExRootAnalysis/ExRootConfReader.cc:207:63: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+  207 |     Tcl_ListObjAppendElement(interp, object, Tcl_NewStringObj("eval", -1));
+      |                                                               ^~~~~~
+external/ExRootAnalysis/ExRootConfReader.cc: In function 'int SourceObjCmdProc(ClientData, Tcl_Interp*, int, Tcl_Obj* const*)':
+external/ExRootAnalysis/ExRootConfReader.cc:225:39: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+  225 |     Tcl_WrongNumArgs(interp, 1, objv, "fileName");
+      |                                       ^~~~~~~~~~
+>> Compiling external/ExRootAnalysis/ExRootTreeReader.cc
+>> Compiling external/ExRootAnalysis/ExRootTreeWriter.cc
+>> Compiling external/ExRootAnalysis/ExRootUtilities.cc
+>> Compiling external/Hector/H_AbstractBeamLine.cc
+>> Compiling external/Hector/H_Aperture.cc
+>> Compiling external/Hector/H_Beam.cc
+>> Compiling external/Hector/H_BeamLine.cc
+>> Compiling external/Hector/H_BeamLineParser.cc
+>> Compiling external/Hector/H_BeamParticle.cc
+>> Compiling external/Hector/H_CircularAperture.cc
+>> Compiling external/Hector/H_Dipole.cc
+>> Compiling external/Hector/H_Drift.cc
+>> Compiling external/Hector/H_EllipticAperture.cc
+>> Compiling external/Hector/H_HorizontalKicker.cc
+>> Compiling external/Hector/H_HorizontalQuadrupole.cc
+external/Hector/H_BeamParticle.cc: In member function 'void H_BeamParticle::computePath(const H_AbstractBeamLine*, bool)':
+external/Hector/H_BeamParticle.cc:483:32: warning: variable 'temp_s' set but not used [-Wunused-but-set-variable]
+  483 |         double temp_x, temp_y, temp_s, temp_tx, temp_ty;
+      |                                ^~~~~~
+>> Compiling external/Hector/H_Kicker.cc
+external/Hector/H_BeamParticle.cc: In member function 'void H_BeamParticle::computePath(const H_AbstractBeamLine&, bool)':
+external/Hector/H_BeamParticle.cc:533:32: warning: variable 'temp_s' set but not used [-Wunused-but-set-variable]
+  533 |         double temp_x, temp_y, temp_s, temp_tx, temp_ty;
+      |                                ^~~~~~
+>> Compiling external/Hector/H_Marker.cc
+>> Compiling external/Hector/H_OpticalElement.cc
+>> Compiling external/Hector/H_Parameters.cc
+>> Compiling external/Hector/H_Quadrupole.cc
+>> Compiling external/Hector/H_RecRPObject.cc
+>> Compiling external/Hector/H_RectEllipticAperture.cc
+>> Compiling external/Hector/H_RectangularAperture.cc
+>> Compiling external/Hector/H_RectangularCollimator.cc
+>> Compiling external/Hector/H_RectangularDipole.cc
+>> Compiling external/Hector/H_RomanPot.cc
+>> Compiling external/Hector/H_SectorDipole.cc
+>> Compiling external/Hector/H_TransportMatrices.cc
+>> Compiling external/Hector/H_VerticalKicker.cc
+>> Compiling external/Hector/H_VerticalQuadrupole.cc
+>> Compiling external/TrackCovariance/AcceptanceClx.cc
+>> Compiling external/TrackCovariance/ObsTrk.cc
+>> Compiling external/TrackCovariance/SolGeom.cc
+>> Compiling external/TrackCovariance/SolGridCov.cc
+>> Compiling external/TrackCovariance/SolTrack.cc
+>> Compiling external/TrackCovariance/TrkUtil.cc
+>> Compiling external/TrackCovariance/VertexFit.cc
+>> Compiling external/TrackCovariance/VertexMore.cc
+>> Compiling modules/AngularSmearing.cc
+>> Compiling modules/BTagging.cc
+>> Compiling modules/BeamSpotFilter.cc
+>> Compiling modules/Calorimeter.cc
+>> Compiling modules/Cloner.cc
+>> Compiling modules/ClusterCounting.cc
+>> Compiling modules/ConstituentFilter.cc
+>> Compiling modules/CscClusterEfficiency.cc
+external/TrackCovariance/SolTrack.cc: In member function 'Int_t SolTrack::FirstHit(Double_t&, Double_t&, Double_t&)':
+external/TrackCovariance/SolTrack.cc:251:23: warning: unused variable 'n' [-Wunused-variable]
+  251 |                 Int_t n = HitListXYZ(ih, Xh, Yh, Zh);
+      |                       ^
+external/TrackCovariance/SolTrack.cc: In member function 'TGraph* SolTrack::TrkPlot()':
+external/TrackCovariance/SolTrack.cc:290:15: warning: variable 'kmh' set but not used [-Wunused-but-set-variable]
+  290 |         Int_t kmh;                                                              // Number of measurement layers hit
+      |               ^~~
+external/TrackCovariance/SolTrack.cc: In member function 'void SolTrack::CovCalc(Bool_t, Bool_t)':
+external/TrackCovariance/SolTrack.cc:349:15: warning: variable 'kmh' set but not used [-Wunused-but-set-variable]
+  349 |         Int_t kmh;                                      // Number of measurement layers hit
+      |               ^~~
+>> Compiling modules/CscClusterId.cc
+external/TrackCovariance/TrkUtil.cc: In member function 'Double_t TrkUtil::GetPhase(TVectorD, TVectorD)':
+external/TrackCovariance/TrkUtil.cc:543:18: warning: unused variable 'D' [-Wunused-variable]
+  543 |         Double_t D = par(0);
+      |                  ^
+external/TrackCovariance/TrkUtil.cc: In member function 'TVectorD TrkUtil::dsdPar(TVectorD, TVectorD)':
+external/TrackCovariance/TrkUtil.cc:562:18: warning: unused variable 'D' [-Wunused-variable]
+  562 |         Double_t D = par(0);
+      |                  ^
+external/TrackCovariance/TrkUtil.cc: In member function 'TVectorD TrkUtil::dsdx(TVectorD, TVectorD)':
+external/TrackCovariance/TrkUtil.cc:586:18: warning: unused variable 'D' [-Wunused-variable]
+  586 |         Double_t D = par(0);
+      |                  ^
+external/TrackCovariance/ObsTrk.cc: In member function 'TMatrixDSym ObsTrk::CovCalc(TVectorD)':
+external/TrackCovariance/ObsTrk.cc:155:18: warning: unused variable 'minPt' [-Wunused-variable]
+  155 |         Double_t minPt = fGC->GetMinPt();
+      |                  ^~~~~
+external/TrackCovariance/ObsTrk.cc:157:18: warning: unused variable 'maxPt' [-Wunused-variable]
+  157 |         Double_t maxPt = fGC->GetMaxPt();
+      |                  ^~~~~
+external/TrackCovariance/ObsTrk.cc:159:18: warning: unused variable 'minAn' [-Wunused-variable]
+  159 |         Double_t minAn = fGC->GetMinAng();
+      |                  ^~~~~
+external/TrackCovariance/ObsTrk.cc:162:18: warning: unused variable 'maxAn' [-Wunused-variable]
+  162 |         Double_t maxAn = fGC->GetMaxAng();
+      |                  ^~~~~
+external/TrackCovariance/ObsTrk.cc:176:15: warning: unused variable 'iLay' [-Wunused-variable]
+  176 |         Int_t iLay = trk->FirstHit(Xfirst, Yfirst, Zfirst);
+      |               ^~~~
+external/TrackCovariance/SolGridCov.cc: In member function 'void SolGridCov::Calc(SolGeom*)':
+external/TrackCovariance/SolGridCov.cc:50:11: warning: unused variable 'ipt' [-Wunused-variable]
+   50 |     Int_t ipt = TMath::Nint(10 * pta(ip));
+      |           ^~~
+external/TrackCovariance/AcceptanceClx.cc: In constructor 'AcceptanceClx::AcceptanceClx(SolGeom*)':
+external/TrackCovariance/AcceptanceClx.cc:201:15: warning: unused variable 'Nrows' [-Wunused-variable]
+  201 |         Int_t Nrows = fAcc.GetNrows();
+      |               ^~~~~
+external/TrackCovariance/AcceptanceClx.cc:202:15: warning: unused variable 'Ncols' [-Wunused-variable]
+  202 |         Int_t Ncols = fAcc.GetNcols();
+      |               ^~~~~
+>> Compiling modules/DecayFilter.cc
+>> Compiling modules/Delphes.cc
+external/TrackCovariance/VertexMore.cc: In member function 'TMatrixD VertexMore::dPdX(Int_t)':
+external/TrackCovariance/VertexMore.cc:121:18: warning: unused variable 'C' [-Wunused-variable]
+  121 |         Double_t C = par(2);
+      |                  ^
+external/TrackCovariance/VertexMore.cc:122:18: warning: unused variable 'z_0' [-Wunused-variable]
+  122 |         Double_t z_0 = par(3);
+      |                  ^~~
+external/TrackCovariance/VertexMore.cc:123:18: warning: unused variable 'lm' [-Wunused-variable]
+  123 |         Double_t lm = par(4);
+      |                  ^~
+external/TrackCovariance/VertexMore.cc: In member function 'TMatrixD VertexMore::dPdAlf(Int_t)':
+external/TrackCovariance/VertexMore.cc:146:18: warning: unused variable 'z_0' [-Wunused-variable]
+  146 |         Double_t z_0 = par(3);
+      |                  ^~~
+external/TrackCovariance/VertexMore.cc: In member function 'TMatrixD VertexMore::dXdAlf(Int_t)':
+external/TrackCovariance/VertexMore.cc:214:26: warning: unused variable 'sp0' [-Wunused-variable]
+  214 |                 Double_t sp0= dsdpr(1);
+      |                          ^~~
+external/TrackCovariance/VertexMore.cc:198:18: warning: unused variable 'R2' [-Wunused-variable]
+  198 |         Double_t R2 = xv(0)*xv(0)+xv(1)*xv(1);
+      |                  ^~
+external/TrackCovariance/VertexMore.cc:204:18: warning: unused variable 'z0' [-Wunused-variable]
+  204 |         Double_t z0 = par(3);
+      |                  ^~
+external/TrackCovariance/VertexMore.cc: In member function 'void VertexMore::CalcParCov()':
+external/TrackCovariance/VertexMore.cc:325:26: warning: unused variable 'z_0' [-Wunused-variable]
+  325 |                 Double_t z_0 = par(3);
+      |                          ^~~
+external/TrackCovariance/VertexMore.cc: In member function 'TMatrixD VertexMore::DparDx(TVector3, TVector3, Double_t)':
+external/TrackCovariance/VertexMore.cc:488:26: warning: unused variable 'pt' [-Wunused-variable]
+  488 |                 Double_t pt = Par(2);
+      |                          ^~
+external/TrackCovariance/VertexMore.cc:492:26: warning: unused variable 's' [-Wunused-variable]
+  492 |                 Double_t s = xv.Y()*sn+xv.X()*cs;
+      |                          ^
+external/TrackCovariance/VertexMore.cc:458:18: warning: unused variable 'D' [-Wunused-variable]
+  458 |         Double_t D = Par(0);
+      |                  ^
+>> Compiling modules/DenseTrackFilter.cc
+>> Compiling modules/DualReadoutCalorimeter.cc
+>> Compiling modules/Efficiency.cc
+>> Compiling modules/EnergyScale.cc
+>> Compiling modules/EnergySmearing.cc
+>> Compiling modules/ExampleModule.cc
+>> Compiling modules/Hector.cc
+>> Compiling modules/IdentificationMap.cc
+>> Compiling modules/ImpactParameterSmearing.cc
+>> Compiling modules/Isolation.cc
+>> Compiling modules/JetFakeParticle.cc
+>> Compiling modules/JetFlavorAssociation.cc
+>> Compiling modules/JetPileUpSubtractor.cc
+>> Compiling modules/LLPFilter.cc
+>> Compiling modules/LeptonDressing.cc
+>> Compiling modules/Merger.cc
+>> Compiling modules/MomentumSmearing.cc
+>> Compiling modules/OldCalorimeter.cc
+>> Compiling modules/ParticleDensity.cc
+>> Compiling modules/ParticlePropagator.cc
+>> Compiling modules/PdgCodeFilter.cc
+>> Compiling modules/PhotonID.cc
+>> Compiling modules/PhotonConversions.cc
+>> Compiling modules/PileUpJetID.cc
+>> Compiling modules/PileUpMerger.cc
+>> Compiling modules/PseudoBTagScore.cc
+>> Compiling modules/RecoPuFilter.cc
+>> Compiling modules/SimpleCalorimeter.cc
+>> Compiling modules/StatusPidFilter.cc
+>> Compiling modules/TaggingParticlesSkimmer.cc
+>> Compiling modules/TauTagging.cc
+>> Compiling modules/TimeOfFlight.cc
+>> Compiling modules/TimeSmearing.cc
+>> Compiling modules/TrackCountingBTagging.cc
+>> Compiling modules/TrackCountingTauTagging.cc
+>> Compiling modules/TrackCovariance.cc
+>> Compiling modules/TrackPileUpSubtractor.cc
+>> Compiling modules/TrackSmearing.cc
+>> Compiling modules/TreeWriter.cc
+>> Compiling modules/TruthVertexFinder.cc
+>> Compiling modules/UniqueObjectFinder.cc
+>> Compiling modules/UnstablePropagator.cc
+>> Compiling modules/VertexFinder.cc
+>> Compiling modules/VertexFinderDA4D.cc
+>> Compiling modules/VertexSorter.cc
+>> Compiling modules/Weighter.cc
+>> Compiling external/tcl/panic.c
+>> Compiling external/tcl/tclAlloc.c
+>> Compiling external/tcl/tclBasic.c
+>> Compiling external/tcl/tclCkalloc.c
+>> Compiling external/tcl/tclCmdAH.c
+>> Compiling external/tcl/tclCmdIL.c
+external/tcl/tclBasic.c: In function 'Tcl_EvalObj':
+external/tcl/tclBasic.c:2212:9: warning: unused variable 'oldCount' [-Wunused-variable]
+ 2212 |     int oldCount = iPtr->cmdCount;      /* Used to tell whether any commands
+      |         ^~~~~~~~
+>> Compiling external/tcl/tclCmdMZ.c
+>> Compiling external/tcl/tclCompExpr.c
+>> Compiling external/tcl/tclCompile.c
+>> Compiling external/tcl/tclExecute.c
+external/tcl/tclCompile.c: In function 'TclObjIndexForString':
+>> Compiling external/tcl/tclGet.c
+external/tcl/tclCompile.c:6507:24: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ 6507 |             objIndex = (int) Tcl_GetHashValue(hPtr);
+      |                        ^
+In file included from external/tcl/tclInt.h:34,
+                 from external/tcl/tclCompile.c:17:
+external/tcl/tcl.h:820:55: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  820 | #define Tcl_SetHashValue(h, value) ((h)->clientData = (ClientData) (value))
+      |                                                       ^
+external/tcl/tclCompile.c:6548:9: note: in expansion of macro 'Tcl_SetHashValue'
+ 6548 |         Tcl_SetHashValue(hPtr, objIndex);
+      |         ^~~~~~~~~~~~~~~~
+>> Compiling external/tcl/tclHash.c
+In file included from external/tcl/tclExecute.c:15:
+external/tcl/tclExecute.c: In function 'TclExecuteByteCode':
+external/tcl/tclInt.h:1761:21: warning: the address of 'length' will always evaluate as 'true' [-Waddress]
+ 1761 |         ((lengthPtr)? \
+      |                     ^
+external/tcl/tclExecute.c:565:29: note: in expansion of macro 'TclGetStringFromObj'
+  565 |                     bytes = TclGetStringFromObj(valuePtr, &length);
+      |                             ^~~~~~~~~~~~~~~~~~~
+external/tcl/tclExecute.c: At top level:
+external/tcl/tclExecute.c:190:25: warning: 'PrintByteCodeInfo' declared 'static' but never defined [-Wunused-function]
+  190 | static void             PrintByteCodeInfo _ANSI_ARGS_((ByteCode *codePtr));
+      |                         ^~~~~~~~~~~~~~~~~
+>> Compiling external/tcl/tclIndexObj.c
+external/tcl/tclIndexObj.c: In function 'Tcl_GetIndexFromObj':
+external/tcl/tclIndexObj.c:89:21: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   89 |         *indexPtr = (int) objPtr->internalRep.twoPtrValue.ptr2;
+      |                     ^
+external/tcl/tclIndexObj.c:131:44: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  131 |     objPtr->internalRep.twoPtrValue.ptr2 = (VOID *) index;
+      |                                            ^
+external/tcl/tclIndexObj.c: In function 'Tcl_WrongNumArgs':
+external/tcl/tclIndexObj.c:293:30: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  293 |                     tablePtr[(int) objv[i]->internalRep.twoPtrValue.ptr2],
+      |                              ^
+>> Compiling external/tcl/tclListObj.c
+>> Compiling external/tcl/tclNamesp.c
+In file included from external/tcl/tclListObj.c:16:
+external/tcl/tclListObj.c: In function 'SetListFromAny':
+external/tcl/tclInt.h:1761:21: warning: the address of 'length' will always evaluate as 'true' [-Waddress]
+ 1761 |         ((lengthPtr)? \
+      |                     ^
+external/tcl/tclListObj.c:791:14: note: in expansion of macro 'TclGetStringFromObj'
+  791 |     string = TclGetStringFromObj(objPtr, &length);
+      |              ^~~~~~~~~~~~~~~~~~~
+>> Compiling external/tcl/tclObj.c
+external/tcl/tclObj.c: In function 'TclAllocateFreeObjects':
+external/tcl/tclObj.c:461:10: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  461 |         ((int)(&(tmp[1])) - (int)(&(tmp[0])));
+      |          ^
+external/tcl/tclObj.c:461:29: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  461 |         ((int)(&(tmp[1])) - (int)(&(tmp[0])));
+      |                             ^
+In file included from external/tcl/tclObj.c:15:
+external/tcl/tclObj.c: In function 'SetBooleanFromAny':
+external/tcl/tclInt.h:1761:21: warning: the address of 'length' will always evaluate as 'true' [-Waddress]
+ 1761 |         ((lengthPtr)? \
+      |                     ^
+external/tcl/tclObj.c:828:14: note: in expansion of macro 'TclGetStringFromObj'
+  828 |     string = TclGetStringFromObj(objPtr, &length);
+      |              ^~~~~~~~~~~~~~~~~~~
+external/tcl/tclObj.c: In function 'SetDoubleFromAny':
+external/tcl/tclInt.h:1761:21: warning: the address of 'length' will always evaluate as 'true' [-Waddress]
+ 1761 |         ((lengthPtr)? \
+      |                     ^
+external/tcl/tclObj.c:1129:14: note: in expansion of macro 'TclGetStringFromObj'
+ 1129 |     string = TclGetStringFromObj(objPtr, &length);
+      |              ^~~~~~~~~~~~~~~~~~~
+external/tcl/tclObj.c: In function 'SetIntFromAny':
+external/tcl/tclInt.h:1761:21: warning: the address of 'length' will always evaluate as 'true' [-Waddress]
+ 1761 |         ((lengthPtr)? \
+      |                     ^
+external/tcl/tclObj.c:1419:14: note: in expansion of macro 'TclGetStringFromObj'
+ 1419 |     string = TclGetStringFromObj(objPtr, &length);
+      |              ^~~~~~~~~~~~~~~~~~~
+>> Compiling external/tcl/tclParse.c
+>> Compiling external/tcl/tclPreserve.c
+>> Compiling external/tcl/tclProc.c
+>> Compiling external/tcl/tclStringObj.c
+external/tcl/tclProc.c: In function 'TclObjInterpProc':
+external/tcl/tclProc.c:831:43: warning: unused variable 'length' [-Wunused-variable]
+  831 |     int nameLen, localCt, numArgs, argCt, length, i, result;
+      |                                           ^~~~~~
+external/tcl/tclProc.c:830:22: warning: unused variable 'bytes' [-Wunused-variable]
+  830 |     char *procName, *bytes;
+      |                      ^~~~~
+In file included from external/tcl/tclInt.h:34,
+                 from external/tcl/tclStringObj.c:20:
+external/tcl/tclStringObj.c: In function 'Tcl_AppendStringsToObj':
+external/tcl/tcl.h:156:69: warning: right-hand operand of comma expression has no effect [-Wunused-value]
+  156 | #   define TCL_VARARGS_START(type, name, list) (va_start(list, name), name)
+      |                                                ~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+external/tcl/tclStringObj.c:337:5: note: in expansion of macro 'TCL_VARARGS_START'
+  337 |     TCL_VARARGS_START(Tcl_Obj *,arg1,argList);
+      |     ^~~~~~~~~~~~~~~~~
+>> Compiling external/tcl/tclUtil.c
+external/tcl/tclProc.c: In function 'TclCreateProc':
+external/tcl/tclProc.c:346:26: warning: 'localPtr' may be used uninitialized [-Wmaybe-uninitialized]
+  346 |             if ((localPtr->nameLength != nameLength)
+      |                  ~~~~~~~~^~~~~~~~~~~~
+external/tcl/tclProc.c:188:29: note: 'localPtr' was declared here
+  188 |     register CompiledLocal *localPtr;
+      |                             ^~~~~~~~
+>> Compiling external/tcl/tclVar.c
+In file included from external/tcl/tclUtil.c:16:
+external/tcl/tclUtil.c: In function 'Tcl_ConcatObj':
+external/tcl/tclInt.h:1761:21: warning: the address of 'length' will always evaluate as 'true' [-Waddress]
+ 1761 |         ((lengthPtr)? \
+      |                     ^
+external/tcl/tclUtil.c:980:19: note: in expansion of macro 'TclGetStringFromObj'
+  980 |         element = TclGetStringFromObj(objPtr, &length);
+      |                   ^~~~~~~~~~~~~~~~~~~
+external/tcl/tclInt.h:1761:21: warning: the address of 'elemLength' will always evaluate as 'true' [-Waddress]
+ 1761 |         ((lengthPtr)? \
+      |                     ^
+external/tcl/tclUtil.c:1010:23: note: in expansion of macro 'TclGetStringFromObj'
+ 1010 |             element = TclGetStringFromObj(objPtr, &elemLength);
+      |                       ^~~~~~~~~~~~~~~~~~~
+In file included from external/tcl/tclInt.h:34:
+external/tcl/tclUtil.c: In function 'Tcl_AppendResult':
+external/tcl/tcl.h:156:69: warning: right-hand operand of comma expression has no effect [-Wunused-value]
+  156 | #   define TCL_VARARGS_START(type, name, list) (va_start(list, name), name)
+      |                                                ~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+external/tcl/tclUtil.c:1483:5: note: in expansion of macro 'TCL_VARARGS_START'
+ 1483 |     TCL_VARARGS_START(Tcl_Interp *,arg1,argList);
+      |     ^~~~~~~~~~~~~~~~~
+external/tcl/tclUtil.c: In function 'TclGetIntForIndex':
+external/tcl/tclInt.h:1761:21: warning: the address of 'length' will always evaluate as 'true' [-Waddress]
+ 1761 |         ((lengthPtr)? \
+      |                     ^
+external/tcl/tclUtil.c:2578:13: note: in expansion of macro 'TclGetStringFromObj'
+ 2578 |     bytes = TclGetStringFromObj(objPtr, &length);
+      |             ^~~~~~~~~~~~~~~~~~~
+>> Generating tmp/modules/FastJetDict.cc
+In file included from external/tcl/tclVar.c:20:
+external/tcl/tclVar.c: In function 'Tcl_LappendObjCmd':
+external/tcl/tclInt.h:1761:21: warning: the address of 'nameBytes' will always evaluate as 'true' [-Waddress]
+ 1761 |         ((lengthPtr)? \
+      |                     ^
+external/tcl/tclVar.c:2676:20: note: in expansion of macro 'TclGetStringFromObj'
+ 2676 |             name = TclGetStringFromObj(objv[1], &nameBytes);
+      |                    ^~~~~~~~~~~~~~~~~~~
+>> Compiling external/PUPPI/PuppiAlgo.cc
+>> Compiling external/PUPPI/PuppiContainer.cc
+>> Compiling external/PUPPI/puppiCleanContainer.cc
+>> Compiling external/fastjet/AreaDefinition.cc
+>> Compiling external/fastjet/BasicRandom.cc
+make: Circular external/fastjet/JetDefinition.hh <- external/fastjet/ClusterSequence.hh dependency dropped.
+>> Compiling external/fastjet/ClosestPair2D.cc
+>> Compiling external/fastjet/ClusterSequence.cc
+>> Compiling external/fastjet/ClusterSequence1GhostPassiveArea.cc
+>> Compiling external/fastjet/ClusterSequenceActiveArea.cc
+>> Compiling external/fastjet/ClusterSequenceActiveAreaExplicitGhosts.cc
+>> Compiling external/fastjet/ClusterSequenceArea.cc
+>> Compiling external/fastjet/ClusterSequenceAreaBase.cc
+>> Compiling external/fastjet/ClusterSequencePassiveArea.cc
+>> Compiling external/fastjet/ClusterSequenceStructure.cc
+>> Compiling external/fastjet/ClusterSequenceVoronoiArea.cc
+>> Compiling external/fastjet/ClusterSequence_CP2DChan.cc
+>> Compiling external/fastjet/ClusterSequence_Delaunay.cc
+>> Compiling external/fastjet/ClusterSequence_DumbN3.cc
+>> Compiling external/fastjet/ClusterSequence_N2.cc
+>> Compiling external/fastjet/ClusterSequence_TiledN2.cc
+>> Compiling external/fastjet/CompositeJetStructure.cc
+>> Compiling external/fastjet/Dnn2piCylinder.cc
+>> Compiling external/fastjet/Dnn3piCylinder.cc
+>> Compiling external/fastjet/Dnn4piCylinder.cc
+>> Compiling external/fastjet/DnnPlane.cc
+>> Compiling external/fastjet/Error.cc
+>> Compiling external/fastjet/FunctionOfPseudoJet.cc
+>> Compiling external/fastjet/GhostedAreaSpec.cc
+>> Compiling external/fastjet/JetDefinition.cc
+In file included from external/fastjet/PseudoJet.hh:43,
+                 from external/fastjet/ClusterSequenceActiveArea.cc:31:
+In member function 'long int fastjet::SharedPtr<T>::__SharedCountingPtr::operator--(int) [with T = fastjet::PseudoJet::UserInfoBase]',
+    inlined from 'void fastjet::SharedPtr<T>::_decrease_count() [with T = fastjet::PseudoJet::UserInfoBase]' at external/fastjet/SharedPtr.hh:587:12,
+    inlined from 'fastjet::SharedPtr<T>::~SharedPtr() [with T = fastjet::PseudoJet::UserInfoBase]' at external/fastjet/SharedPtr.hh:377:20,
+    inlined from 'virtual fastjet::PseudoJet::~PseudoJet()' at external/fastjet/PseudoJet.hh:104:24,
+    inlined from 'void std::valarray<_Tp>::resize(std::size_t, _Tp) [with _Tp = fastjet::PseudoJet]' at /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/valarray:1044:37,
+    inlined from 'void fastjet::ClusterSequenceActiveArea::_resize_and_zero_AA()' at external/fastjet/ClusterSequenceActiveArea.cc:71:31:
+external/fastjet/SharedPtr.hh:556:40: warning: pointer may be used after 'void operator delete(void*, std::size_t)' [-Wuse-after-free]
+  556 |     inline long operator--(int){return _count--;}
+      |                                        ^~~~~~
+In member function 'void fastjet::SharedPtr<T>::_decrease_count() [with T = fastjet::PseudoJet::UserInfoBase]',
+    inlined from 'fastjet::SharedPtr<T>::~SharedPtr() [with T = fastjet::PseudoJet::UserInfoBase]' at external/fastjet/SharedPtr.hh:377:20,
+    inlined from 'virtual fastjet::PseudoJet::~PseudoJet()' at external/fastjet/PseudoJet.hh:104:24,
+    inlined from 'void std::__valarray_fill_construct(_Tp*, _Tp*, _Tp) [with _Tp = fastjet::PseudoJet]' at /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/valarray_array.h:127:57,
+    inlined from 'void std::valarray<_Tp>::resize(std::size_t, _Tp) [with _Tp = fastjet::PseudoJet]' at /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/valarray:1044:37,
+    inlined from 'void fastjet::ClusterSequenceActiveArea::_resize_and_zero_AA()' at external/fastjet/ClusterSequenceActiveArea.cc:71:31:
+external/fastjet/SharedPtr.hh:591:7: note: call to 'void operator delete(void*, std::size_t)' here
+  591 |       delete _ptr; // that automatically deletes the object itself
+      |       ^~~~~~~~~~~
+In member function 'long int fastjet::SharedPtr<T>::__SharedCountingPtr::operator--(int) [with T = fastjet::PseudoJet::UserInfoBase]',
+    inlined from 'void fastjet::SharedPtr<T>::_decrease_count() [with T = fastjet::PseudoJet::UserInfoBase]' at external/fastjet/SharedPtr.hh:587:12,
+    inlined from 'fastjet::SharedPtr<T>::~SharedPtr() [with T = fastjet::PseudoJet::UserInfoBase]' at external/fastjet/SharedPtr.hh:377:20,
+    inlined from 'virtual fastjet::PseudoJet::~PseudoJet()' at external/fastjet/PseudoJet.hh:104:24,
+    inlined from 'void std::valarray<_Tp>::resize(std::size_t, _Tp) [with _Tp = fastjet::PseudoJet]' at /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/valarray:1044:37,
+    inlined from 'void fastjet::ClusterSequenceActiveArea::_resize_and_zero_AA()' at external/fastjet/ClusterSequenceActiveArea.cc:71:31:
+external/fastjet/SharedPtr.hh:556:40: warning: pointer may be used after 'void operator delete(void*, std::size_t)' [-Wuse-after-free]
+  556 |     inline long operator--(int){return _count--;}
+      |                                        ^~~~~~
+In member function 'void fastjet::SharedPtr<T>::_decrease_count() [with T = fastjet::PseudoJet::UserInfoBase]',
+    inlined from 'fastjet::SharedPtr<T>::~SharedPtr() [with T = fastjet::PseudoJet::UserInfoBase]' at external/fastjet/SharedPtr.hh:377:20,
+    inlined from 'virtual fastjet::PseudoJet::~PseudoJet()' at external/fastjet/PseudoJet.hh:104:24,
+    inlined from 'void std::__valarray_fill_construct(_Tp*, _Tp*, _Tp) [with _Tp = fastjet::PseudoJet]' at /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/valarray_array.h:127:57,
+    inlined from 'void std::valarray<_Tp>::resize(std::size_t, _Tp) [with _Tp = fastjet::PseudoJet]' at /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/valarray:1044:37,
+    inlined from 'void fastjet::ClusterSequenceActiveArea::_resize_and_zero_AA()' at external/fastjet/ClusterSequenceActiveArea.cc:71:31:
+external/fastjet/SharedPtr.hh:591:7: note: call to 'void operator delete(void*, std::size_t)' here
+  591 |       delete _ptr; // that automatically deletes the object itself
+      |       ^~~~~~~~~~~
+In member function 'long int fastjet::SharedPtr<T>::__SharedCountingPtr::operator--(int) [with T = fastjet::PseudoJetStructureBase]',
+    inlined from 'void fastjet::SharedPtr<T>::_decrease_count() [with T = fastjet::PseudoJetStructureBase]' at external/fastjet/SharedPtr.hh:587:12,
+    inlined from 'fastjet::SharedPtr<T>::~SharedPtr() [with T = fastjet::PseudoJetStructureBase]' at external/fastjet/SharedPtr.hh:377:20,
+    inlined from 'virtual fastjet::PseudoJet::~PseudoJet()' at external/fastjet/PseudoJet.hh:104:24,
+    inlined from 'void std::valarray<_Tp>::resize(std::size_t, _Tp) [with _Tp = fastjet::PseudoJet]' at /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/valarray:1044:37,
+    inlined from 'void fastjet::ClusterSequenceActiveArea::_resize_and_zero_AA()' at external/fastjet/ClusterSequenceActiveArea.cc:71:31:
+external/fastjet/SharedPtr.hh:556:40: warning: pointer may be used after 'void operator delete(void*, std::size_t)' [-Wuse-after-free]
+  556 |     inline long operator--(int){return _count--;}
+      |                                        ^~~~~~
+In member function 'void fastjet::SharedPtr<T>::_decrease_count() [with T = fastjet::PseudoJetStructureBase]',
+    inlined from 'fastjet::SharedPtr<T>::~SharedPtr() [with T = fastjet::PseudoJetStructureBase]' at external/fastjet/SharedPtr.hh:377:20,
+    inlined from 'virtual fastjet::PseudoJet::~PseudoJet()' at external/fastjet/PseudoJet.hh:104:24,
+    inlined from 'void std::__valarray_fill_construct(_Tp*, _Tp*, _Tp) [with _Tp = fastjet::PseudoJet]' at /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/valarray_array.h:127:57,
+    inlined from 'void std::valarray<_Tp>::resize(std::size_t, _Tp) [with _Tp = fastjet::PseudoJet]' at /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/valarray:1044:37,
+    inlined from 'void fastjet::ClusterSequenceActiveArea::_resize_and_zero_AA()' at external/fastjet/ClusterSequenceActiveArea.cc:71:31:
+external/fastjet/SharedPtr.hh:591:7: note: call to 'void operator delete(void*, std::size_t)' here
+  591 |       delete _ptr; // that automatically deletes the object itself
+      |       ^~~~~~~~~~~
+>> Compiling external/fastjet/LazyTiling25.cc
+>> Compiling external/fastjet/LazyTiling9.cc
+>> Compiling external/fastjet/LazyTiling9Alt.cc
+>> Compiling external/fastjet/LazyTiling9SeparateGhosts.cc
+>> Compiling external/fastjet/LimitedWarning.cc
+>> Compiling external/fastjet/MinHeap.cc
+>> Compiling external/fastjet/PseudoJet.cc
+>> Compiling external/fastjet/PseudoJetStructureBase.cc
+>> Compiling external/fastjet/RangeDefinition.cc
+>> Compiling external/fastjet/RectangularGrid.cc
+>> Compiling external/fastjet/Selector.cc
+>> Compiling external/fastjet/TilingExtent.cc
+>> Compiling external/fastjet/Voronoi.cc
+>> Compiling external/fastjet/contribs/Nsubjettiness/AxesDefinition.cc
+>> Compiling external/fastjet/contribs/Nsubjettiness/ExtraRecombiners.cc
+>> Compiling external/fastjet/contribs/Nsubjettiness/MeasureDefinition.cc
+>> Compiling external/fastjet/contribs/Nsubjettiness/Njettiness.cc
+>> Compiling external/fastjet/contribs/Nsubjettiness/NjettinessPlugin.cc
+>> Compiling external/fastjet/contribs/Nsubjettiness/Nsubjettiness.cc
+>> Compiling external/fastjet/contribs/Nsubjettiness/TauComponents.cc
+>> Compiling external/fastjet/contribs/Nsubjettiness/XConePlugin.cc
+>> Compiling external/fastjet/contribs/RecursiveTools/BottomUpSoftDrop.cc
+>> Compiling external/fastjet/contribs/RecursiveTools/IteratedSoftDrop.cc
+>> Compiling external/fastjet/contribs/RecursiveTools/ModifiedMassDropTagger.cc
+>> Compiling external/fastjet/contribs/RecursiveTools/Recluster.cc
+>> Compiling external/fastjet/contribs/RecursiveTools/RecursiveSoftDrop.cc
+>> Compiling external/fastjet/contribs/RecursiveTools/RecursiveSymmetryCutBase.cc
+>> Compiling external/fastjet/contribs/RecursiveTools/SoftDrop.cc
+>> Compiling external/fastjet/contribs/SoftKiller/SoftKiller.cc
+>> Compiling external/fastjet/contribs/ValenciaPlugin/ValenciaPlugin.cc
+>> Compiling external/fastjet/plugins/ATLASCone/ATLASConePlugin.cc
+>> Compiling external/fastjet/plugins/ATLASCone/Jet.cc
+>> Compiling external/fastjet/plugins/ATLASCone/JetConeFinderTool.cc
+>> Compiling external/fastjet/plugins/ATLASCone/JetSplitMergeTool.cc
+>> Compiling external/fastjet/plugins/CDFCones/CDFJetCluPlugin.cc
+>> Compiling external/fastjet/plugins/CDFCones/CDFMidPointPlugin.cc
+>> Compiling external/fastjet/plugins/CDFCones/JetCluAlgorithm.cc
+>> Compiling external/fastjet/plugins/CDFCones/MidPointAlgorithm.cc
+>> Compiling external/fastjet/plugins/CMSIterativeCone/CMSIterativeConePlugin.cc
+In file included from external/fastjet/plugins/CDFCones/MidPointAlgorithm.cc:50:
+external/fastjet/plugins/CDFCones/MidPointAlgorithm.hh:83:36: warning: 'volatile'-qualified parameter is deprecated [-Wvolatile]
+   83 |   void iterateCone(volatile double startRapidity, volatile double startPhi, volatile double startPt, std::vector<PhysicsTower>& particles,
+      |                    ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+external/fastjet/plugins/CDFCones/MidPointAlgorithm.hh:83:67: warning: 'volatile'-qualified parameter is deprecated [-Wvolatile]
+   83 |   void iterateCone(volatile double startRapidity, volatile double startPhi, volatile double startPt, std::vector<PhysicsTower>& particles,
+      |                                                   ~~~~~~~~~~~~~~~~^~~~~~~~
+external/fastjet/plugins/CDFCones/MidPointAlgorithm.hh:83:93: warning: 'volatile'-qualified parameter is deprecated [-Wvolatile]
+   83 |   void iterateCone(volatile double startRapidity, volatile double startPhi, volatile double startPt, std::vector<PhysicsTower>& particles,
+      |                                                                             ~~~~~~~~~~~~~~~~^~~~~~~
+>> Compiling external/fastjet/plugins/D0RunICone/D0RunIBaseConePlugin.cc
+>> Compiling external/fastjet/plugins/D0RunIICone/D0RunIIConePlugin.cc
+>> Compiling external/fastjet/plugins/EECambridge/EECambridgePlugin.cc
+>> Compiling external/fastjet/plugins/GridJet/GridJetPlugin.cc
+external/fastjet/plugins/CDFCones/MidPointAlgorithm.cc:118:53: warning: 'volatile'-qualified parameter is deprecated [-Wvolatile]
+  118 | void MidPointAlgorithm::iterateCone(volatile double startRapidity, volatile double startPhi, volatile double startPt,
+      |                                     ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+external/fastjet/plugins/CDFCones/MidPointAlgorithm.cc:118:84: warning: 'volatile'-qualified parameter is deprecated [-Wvolatile]
+  118 | void MidPointAlgorithm::iterateCone(volatile double startRapidity, volatile double startPhi, volatile double startPt,
+      |                                                                    ~~~~~~~~~~~~~~~~^~~~~~~~
+external/fastjet/plugins/CDFCones/MidPointAlgorithm.cc:118:110: warning: 'volatile'-qualified parameter is deprecated [-Wvolatile]
+  118 | void MidPointAlgorithm::iterateCone(volatile double startRapidity, volatile double startPhi, volatile double startPt,
+      |                                                                                              ~~~~~~~~~~~~~~~~^~~~~~~
+In file included from external/fastjet/plugins/CDFCones/CDFMidPointPlugin.cc:37:
+external/fastjet/plugins/CDFCones/MidPointAlgorithm.hh:83:36: warning: 'volatile'-qualified parameter is deprecated [-Wvolatile]
+   83 |   void iterateCone(volatile double startRapidity, volatile double startPhi, volatile double startPt, std::vector<PhysicsTower>& particles,
+      |                    ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+external/fastjet/plugins/CDFCones/MidPointAlgorithm.hh:83:67: warning: 'volatile'-qualified parameter is deprecated [-Wvolatile]
+   83 |   void iterateCone(volatile double startRapidity, volatile double startPhi, volatile double startPt, std::vector<PhysicsTower>& particles,
+      |                                                   ~~~~~~~~~~~~~~~~^~~~~~~~
+external/fastjet/plugins/CDFCones/MidPointAlgorithm.hh:83:93: warning: 'volatile'-qualified parameter is deprecated [-Wvolatile]
+   83 |   void iterateCone(volatile double startRapidity, volatile double startPhi, volatile double startPt, std::vector<PhysicsTower>& particles,
+      |                                                                             ~~~~~~~~~~~~~~~~^~~~~~~
+>> Compiling external/fastjet/plugins/Jade/JadePlugin.cc
+>> Compiling external/fastjet/plugins/NestedDefs/NestedDefsPlugin.cc
+>> Compiling external/fastjet/plugins/SISCone/SISConePlugin.cc
+>> Compiling external/fastjet/plugins/SISCone/area.cc
+>> Compiling external/fastjet/plugins/SISCone/geom_2d.cc
+In file included from external/fastjet/plugins/CDFCones/PhysicsTower.hh:36,
+                 from external/fastjet/plugins/CDFCones/JetCluAlgorithm.hh:24,
+                 from external/fastjet/plugins/CDFCones/CDFJetCluPlugin.cc:37:
+In constructor 'fastjet::cdf::CalTower::CalTower(double, double, double)',
+    inlined from 'fastjet::cdf::PhysicsTower::PhysicsTower(fastjet::cdf::LorentzVector)' at external/fastjet/plugins/CDFCones/PhysicsTower.hh:56:49,
+    inlined from 'virtual void fastjet::CDFJetCluPlugin::run_clustering(fastjet::ClusterSequence&) const' at external/fastjet/plugins/CDFCones/CDFJetCluPlugin.cc:79:32:
+external/fastjet/plugins/CDFCones/CalTower.hh:72:36: warning: 'tower.fastjet::cdf::PhysicsTower::calTower.fastjet::cdf::CalTower::iEta' may be used uninitialized [-Wmaybe-uninitialized]
+   72 |       if ((iEta >= 8 && iEta < 14) || (iEta >= 38 && iEta < 44))
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+external/fastjet/plugins/CDFCones/CDFJetCluPlugin.cc: In member function 'virtual void fastjet::CDFJetCluPlugin::run_clustering(fastjet::ClusterSequence&) const':
+external/fastjet/plugins/CDFCones/CDFJetCluPlugin.cc:79:18: note: 'tower.fastjet::cdf::PhysicsTower::calTower.fastjet::cdf::CalTower::iEta' was declared here
+   79 |     PhysicsTower tower(fourvect);
+      |                  ^~~~~
+In file included from external/fastjet/plugins/CDFCones/PhysicsTower.hh:36,
+                 from external/fastjet/plugins/CDFCones/MidPointAlgorithm.hh:38:
+In constructor 'fastjet::cdf::CalTower::CalTower(double, double, double)',
+    inlined from 'fastjet::cdf::PhysicsTower::PhysicsTower(fastjet::cdf::LorentzVector)' at external/fastjet/plugins/CDFCones/PhysicsTower.hh:56:49,
+    inlined from 'virtual void fastjet::CDFMidPointPlugin::run_clustering(fastjet::ClusterSequence&) const' at external/fastjet/plugins/CDFCones/CDFMidPointPlugin.cc:101:32:
+external/fastjet/plugins/CDFCones/CalTower.hh:72:36: warning: 'tower.fastjet::cdf::PhysicsTower::calTower.fastjet::cdf::CalTower::iEta' may be used uninitialized [-Wmaybe-uninitialized]
+   72 |       if ((iEta >= 8 && iEta < 14) || (iEta >= 38 && iEta < 44))
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+external/fastjet/plugins/CDFCones/CDFMidPointPlugin.cc: In member function 'virtual void fastjet::CDFMidPointPlugin::run_clustering(fastjet::ClusterSequence&) const':
+external/fastjet/plugins/CDFCones/CDFMidPointPlugin.cc:101:18: note: 'tower.fastjet::cdf::PhysicsTower::calTower.fastjet::cdf::CalTower::iEta' was declared here
+  101 |     PhysicsTower tower(fourvect);
+      |                  ^~~~~
+>> Compiling external/fastjet/plugins/SISCone/hash.cc
+>> Compiling external/fastjet/plugins/SISCone/momentum.cc
+>> Compiling external/fastjet/plugins/SISCone/protocones.cc
+>> Compiling external/fastjet/plugins/SISCone/quadtree.cc
+>> Compiling external/fastjet/plugins/SISCone/ranlux.cc
+>> Compiling external/fastjet/plugins/SISCone/reference.cc
+>> Compiling external/fastjet/plugins/SISCone/siscone.cc
+>> Compiling external/fastjet/plugins/SISCone/siscone_error.cc
+>> Compiling external/fastjet/plugins/SISCone/split_merge.cc
+>> Compiling external/fastjet/plugins/SISCone/vicinity.cc
+>> Compiling external/fastjet/plugins/TrackJet/TrackJetPlugin.cc
+>> Compiling external/fastjet/tools/BackgroundEstimatorBase.cc
+>> Compiling external/fastjet/tools/CASubJetTagger.cc
+>> Compiling external/fastjet/tools/Filter.cc
+>> Compiling external/fastjet/tools/GridMedianBackgroundEstimator.cc
+>> Compiling external/fastjet/tools/JHTopTagger.cc
+>> Compiling external/fastjet/tools/JetMedianBackgroundEstimator.cc
+>> Compiling external/fastjet/tools/MassDropTagger.cc
+>> Compiling external/fastjet/tools/Pruner.cc
+>> Compiling external/fastjet/tools/Recluster.cc
+>> Compiling external/fastjet/tools/RestFrameNSubjettinessTagger.cc
+>> Compiling external/fastjet/tools/Subtractor.cc
+>> Compiling external/fastjet/tools/TopTaggerBase.cc
+>> Compiling modules/FastJetFinder.cc
+>> Compiling modules/FastJetGridMedianEstimator.cc
+>> Compiling modules/RunPUPPI.cc
+>> Copying ClassesDict_rdict.pcm
+>> Copying ExRootAnalysisDict_rdict.pcm
+>> Copying FastJetDict_rdict.pcm
+>> Compiling converters/hepmc2pileup.cpp
+>> Compiling converters/lhco2root.cpp
+>> Compiling converters/pileup2root.cpp
+>> Compiling converters/root2lhco.cpp
+>> Compiling converters/root2pileup.cpp
+In file included from external/fastjet/PseudoJet.hh:43,
+                 from external/fastjet/tools/RestFrameNSubjettinessTagger.hh:34,
+                 from external/fastjet/tools/RestFrameNSubjettinessTagger.cc:31:
+In member function 'long int fastjet::SharedPtr<T>::__SharedCountingPtr::operator--(int) [with T = fastjet::PseudoJet::UserInfoBase]',
+    inlined from 'void fastjet::SharedPtr<T>::_decrease_count() [with T = fastjet::PseudoJet::UserInfoBase]' at external/fastjet/SharedPtr.hh:587:12,
+    inlined from 'fastjet::SharedPtr<T>::~SharedPtr() [with T = fastjet::PseudoJet::UserInfoBase]' at external/fastjet/SharedPtr.hh:377:20,
+    inlined from 'virtual fastjet::PseudoJet::~PseudoJet()' at external/fastjet/PseudoJet.hh:104:24,
+    inlined from 'virtual fastjet::PseudoJet fastjet::RestFrameNSubjettinessTagger::result(const fastjet::PseudoJet&) const' at external/fastjet/tools/RestFrameNSubjettinessTagger.cc:119:1:
+external/fastjet/SharedPtr.hh:556:40: warning: pointer may be used after 'void operator delete(void*, std::size_t)' [-Wuse-after-free]
+  556 |     inline long operator--(int){return _count--;}
+      |                                        ^~~~~~
+In member function 'void fastjet::SharedPtr<T>::_decrease_count() [with T = fastjet::PseudoJet::UserInfoBase]',
+    inlined from 'fastjet::SharedPtr<T>::~SharedPtr() [with T = fastjet::PseudoJet::UserInfoBase]' at external/fastjet/SharedPtr.hh:377:20,
+    inlined from 'virtual fastjet::PseudoJet::~PseudoJet()' at external/fastjet/PseudoJet.hh:104:24,
+    inlined from 'virtual fastjet::PseudoJet fastjet::RestFrameNSubjettinessTagger::result(const fastjet::PseudoJet&) const' at external/fastjet/tools/RestFrameNSubjettinessTagger.cc:119:1:
+external/fastjet/SharedPtr.hh:591:7: note: call to 'void operator delete(void*, std::size_t)' here
+  591 |       delete _ptr; // that automatically deletes the object itself
+      |       ^~~~~~~~~~~
+In member function 'long int fastjet::SharedPtr<T>::__SharedCountingPtr::operator--(int) [with T = fastjet::PseudoJet::UserInfoBase]',
+    inlined from 'void fastjet::SharedPtr<T>::_decrease_count() [with T = fastjet::PseudoJet::UserInfoBase]' at external/fastjet/SharedPtr.hh:587:12,
+    inlined from 'fastjet::SharedPtr<T>::~SharedPtr() [with T = fastjet::PseudoJet::UserInfoBase]' at external/fastjet/SharedPtr.hh:377:20,
+    inlined from 'virtual fastjet::PseudoJet::~PseudoJet()' at external/fastjet/PseudoJet.hh:104:24,
+    inlined from 'virtual fastjet::PseudoJet fastjet::RestFrameNSubjettinessTagger::result(const fastjet::PseudoJet&) const' at external/fastjet/tools/RestFrameNSubjettinessTagger.cc:119:1:
+external/fastjet/SharedPtr.hh:556:40: warning: pointer may be used after 'void operator delete(void*, std::size_t)' [-Wuse-after-free]
+  556 |     inline long operator--(int){return _count--;}
+      |                                        ^~~~~~
+In member function 'void fastjet::SharedPtr<T>::_decrease_count() [with T = fastjet::PseudoJet::UserInfoBase]',
+    inlined from 'fastjet::SharedPtr<T>::~SharedPtr() [with T = fastjet::PseudoJet::UserInfoBase]' at external/fastjet/SharedPtr.hh:377:20,
+    inlined from 'virtual fastjet::PseudoJet::~PseudoJet()' at external/fastjet/PseudoJet.hh:104:24,
+    inlined from 'virtual fastjet::PseudoJet fastjet::RestFrameNSubjettinessTagger::result(const fastjet::PseudoJet&) const' at external/fastjet/tools/RestFrameNSubjettinessTagger.cc:119:1:
+external/fastjet/SharedPtr.hh:591:7: note: call to 'void operator delete(void*, std::size_t)' here
+  591 |       delete _ptr; // that automatically deletes the object itself
+      |       ^~~~~~~~~~~
+>> Compiling converters/stdhep2pileup.cpp
+>> Compiling examples/CaloGrid.cpp
+>> Compiling examples/Example1.cpp
+>> Compiling readers/DelphesHepMC2.cpp
+>> Compiling readers/DelphesHepMC3.cpp
+>> Compiling readers/DelphesLHEF.cpp
+>> Compiling readers/DelphesROOT.cpp
+>> Compiling readers/DelphesSTDHEP.cpp
+>> Compiling readers/DelphesCMSFWLite.cpp
+>> Compiling tmp/classes/ClassesDict.cc
+converters/root2lhco.cpp: In member function 'void LHCOWriter::AnalyseTauJets()':
+converters/root2lhco.cpp:342:10: warning: unused variable 'track' [-Wunused-variable]
+  342 |   Track *track;
+      |          ^~~~~
+>> Compiling tmp/external/ExRootAnalysis/ExRootAnalysisDict.cc
+>> Generating tmp/modules/ModulesDict.cc
+>> Compiling tmp/modules/FastJetDict.cc
+In file included from examples/Example1.cpp:50:
+examples/Example1.C: In function 'void Example1(const char*)':
+examples/Example1.C:32:17: warning: unused variable 'branchEvent' [-Wunused-variable]
+   32 |   TClonesArray *branchEvent = treeReader->UseBranch("Event");
+      |                 ^~~~~~~~~~~
+examples/Example1.cpp: In function 'int main(int, char**)':
+examples/Example1.cpp:56:19: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+   56 |   char *appName = "Example1";
+      |                   ^~~~~~~~~~
+In file included from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/FWCore/Utilities/interface/EDMException.h:11,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/Common/interface/WrapperView.icc:13,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/Common/interface/Wrapper.h:186,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/Common/interface/ConvertHandle.h:6,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/FWCore/Common/interface/EventBase.h:30,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/EventBase.h:25,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:57,
+                 from readers/DelphesCMSFWLite.cpp:51:
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/FWCore/Utilities/interface/Exception.h:142:38: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  142 |     CMS_SA_ALLOW mutable std::string what_;
+      |                                      ^~~~~
+In file included from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/FWCore/Common/interface/EventBase.h:33:
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/FWCore/Utilities/interface/InputTag.h:63:45: warning: 'cms::thread_guard' scoped attribute directive ignored [-Wattributes]
+   63 |     CMS_THREAD_GUARD(index_) mutable TypeID typeID_;
+      |                                             ^~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/FWCore/Utilities/interface/InputTag.h:64:50: warning: 'cms::thread_guard' scoped attribute directive ignored [-Wattributes]
+   64 |     CMS_THREAD_GUARD(index_) mutable void const* productRegistry_;
+      |                                                  ^~~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/FWCore/Utilities/interface/InputTag.h:68:43: warning: 'cms::thread_guard' scoped attribute directive ignored [-Wattributes]
+   68 |     CMS_THREAD_GUARD(index_) mutable char branchType_;
+      |                                           ^~~~~~~~~~~
+In file included from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/EntryFinder.h:22,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:58:
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/Provenance/interface/FileIndex.h:122:37: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  122 |     CMS_SA_ALLOW mutable Transients transient_;
+      |                                     ^~~~~~~~~~
+In file included from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/EntryFinder.h:23:
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/Provenance/interface/IndexIntoFile.h:1297:37: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+ 1297 |     CMS_SA_ALLOW mutable Transients transient_;
+      |                                     ^~~~~~~~~~
+In file included from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Run.h:38,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/LuminosityBlock.h:30,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:59:
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/DataGetterHelper.h:109:59: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  109 |     CMS_SA_ALLOW mutable std::shared_ptr<BranchMapReader> branchMap_;
+      |                                                           ^~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/DataGetterHelper.h:110:39: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  110 |     CMS_SA_ALLOW mutable KeyToDataMap data_;
+      |                                       ^~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/DataGetterHelper.h:111:51: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  111 |     CMS_SA_ALLOW mutable std::vector<char const*> labels_;
+      |                                                   ^~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/DataGetterHelper.h:115:9: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  115 |         idToData_;
+      |         ^~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/DataGetterHelper.h:116:83: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  116 |     CMS_SA_ALLOW mutable std::map<edm::BranchID, std::shared_ptr<internal::Data>> bidToData_;
+      |                                                                                   ^~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/DataGetterHelper.h:119:31: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  119 |     CMS_SA_ALLOW mutable bool tcTrained_;
+      |                               ^~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Run.h:111:59: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  111 |     CMS_SA_ALLOW mutable std::shared_ptr<BranchMapReader> branchMap_;
+      |                                                           ^~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Run.h:114:51: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  114 |     CMS_SA_ALLOW mutable std::vector<char const*> labels_;
+      |                                                   ^~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Run.h:115:49: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  115 |     CMS_SA_ALLOW mutable edm::ProcessHistoryMap historyMap_;
+      |                                                 ^~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Run.h:116:51: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  116 |     CMS_SA_ALLOW mutable std::vector<std::string> procHistoryNames_;
+      |                                                   ^~~~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Run.h:117:44: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  117 |     CMS_SA_ALLOW mutable edm::RunAuxiliary aux_;
+      |                                            ^~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Run.h:118:38: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  118 |     CMS_SA_ALLOW mutable EntryFinder entryFinder_;
+      |                                      ^~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/LuminosityBlock.h:115:59: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  115 |     CMS_SA_ALLOW mutable std::shared_ptr<BranchMapReader> branchMap_;
+      |                                                           ^~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/LuminosityBlock.h:117:55: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  117 |     CMS_SA_ALLOW mutable std::shared_ptr<fwlite::Run> run_;
+      |                                                       ^~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/LuminosityBlock.h:120:51: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  120 |     CMS_SA_ALLOW mutable std::vector<char const*> labels_;
+      |                                                   ^~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/LuminosityBlock.h:121:49: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  121 |     CMS_SA_ALLOW mutable edm::ProcessHistoryMap historyMap_;
+      |                                                 ^~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/LuminosityBlock.h:122:51: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  122 |     CMS_SA_ALLOW mutable std::vector<std::string> procHistoryNames_;
+      |                                                   ^~~~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/LuminosityBlock.h:123:56: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  123 |     CMS_SA_ALLOW mutable edm::LuminosityBlockAuxiliary aux_;
+      |                                                        ^~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/LuminosityBlock.h:124:38: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  124 |     CMS_SA_ALLOW mutable EntryFinder entryFinder_;
+      |                                      ^~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/LuminosityBlock.h:131:54: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  131 |     CMS_SA_ALLOW mutable std::shared_ptr<RunFactory> runFactory_;
+      |                                                      ^~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:219:33: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  219 |     CMS_SA_ALLOW mutable TFile* file_;
+      |                                 ^~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:223:67: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  223 |     CMS_SA_ALLOW mutable std::shared_ptr<fwlite::LuminosityBlock> lumi_;
+      |                                                                   ^~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:224:55: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  224 |     CMS_SA_ALLOW mutable std::shared_ptr<fwlite::Run> run_;
+      |                                                       ^~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:225:50: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  225 |     CMS_SA_ALLOW mutable fwlite::BranchMapReader branchMap_;
+      |                                                  ^~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:228:51: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  228 |     CMS_SA_ALLOW mutable std::vector<char const*> labels_;
+      |                                                   ^~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:229:49: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  229 |     CMS_SA_ALLOW mutable edm::ProcessHistoryMap historyMap_;
+      |                                                 ^~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:230:66: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  230 |     CMS_SA_ALLOW mutable std::vector<edm::EventProcessHistoryID> eventProcessHistoryIDs_;
+      |                                                                  ^~~~~~~~~~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:231:51: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  231 |     CMS_SA_ALLOW mutable std::vector<std::string> procHistoryNames_;
+      |                                                   ^~~~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:232:46: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  232 |     CMS_SA_ALLOW mutable edm::EventAuxiliary aux_;
+      |                                              ^~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:233:38: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  233 |     CMS_SA_ALLOW mutable EntryFinder entryFinder_;
+      |                                      ^~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:238:31: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  238 |     CMS_SA_ALLOW mutable bool parameterSetRegistryFilled_;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/FWLite/interface/Event.h:241:54: warning: 'cms::sa_allow' scoped attribute directive ignored [-Wattributes]
+  241 |     CMS_SA_ALLOW mutable std::shared_ptr<RunFactory> runFactory_;
+      |                                                      ^~~~~~~~~~~
+In file included from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/Common/interface/Ref.h:115,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/Common/interface/OwnVector.h:7,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/Candidate/interface/CandidateFwd.h:3,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/Candidate/interface/const_iterator.h:9,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/Candidate/interface/Candidate.h:12,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/Candidate/interface/LeafCandidate.h:11,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/Candidate/interface/CompositeRefCandidateT.h:13,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/HepMCCandidate/interface/GenParticle.h:10,
+                 from readers/DelphesCMSFWLite.cpp:53:
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:180:45: warning: 'template<class _Arg, class _Result> struct std::unary_function' is deprecated [-Wdeprecated-declarations]
+  180 |         : public boost::functional::detail::unary_function<typename unary_traits<Predicate>::argument_type,bool>
+      |                                             ^~~~~~~~~~~~~~
+In file included from /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/string:48,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/locale_classes.h:40,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/ios_base.h:41,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/ios:42,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/ostream:38,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/iostream:39,
+                 from readers/DelphesCMSFWLite.cpp:20:
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:117:12: note: declared here
+  117 |     struct unary_function
+      |            ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:214:45: warning: 'template<class _Arg1, class _Arg2, class _Result> struct std::binary_function' is deprecated [-Wdeprecated-declarations]
+  214 |         : public boost::functional::detail::binary_function<
+      |                                             ^~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:131:12: note: declared here
+  131 |     struct binary_function
+      |            ^~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:252:45: warning: 'template<class _Arg, class _Result> struct std::unary_function' is deprecated [-Wdeprecated-declarations]
+  252 |         : public boost::functional::detail::unary_function<
+      |                                             ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:117:12: note: declared here
+  117 |     struct unary_function
+      |            ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:299:45: warning: 'template<class _Arg, class _Result> struct std::unary_function' is deprecated [-Wdeprecated-declarations]
+  299 |         : public boost::functional::detail::unary_function<
+      |                                             ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:117:12: note: declared here
+  117 |     struct unary_function
+      |            ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:345:57: warning: 'template<class _Arg, class _Result> struct std::unary_function' is deprecated [-Wdeprecated-declarations]
+  345 |     class mem_fun_t : public boost::functional::detail::unary_function<T*, S>
+      |                                                         ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:117:12: note: declared here
+  117 |     struct unary_function
+      |            ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:361:58: warning: 'template<class _Arg1, class _Arg2, class _Result> struct std::binary_function' is deprecated [-Wdeprecated-declarations]
+  361 |     class mem_fun1_t : public boost::functional::detail::binary_function<T*, A, S>
+      |                                                          ^~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:131:12: note: declared here
+  131 |     struct binary_function
+      |            ^~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:377:63: warning: 'template<class _Arg, class _Result> struct std::unary_function' is deprecated [-Wdeprecated-declarations]
+  377 |     class const_mem_fun_t : public boost::functional::detail::unary_function<const T*, S>
+      |                                                               ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:117:12: note: declared here
+  117 |     struct unary_function
+      |            ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:393:64: warning: 'template<class _Arg1, class _Arg2, class _Result> struct std::binary_function' is deprecated [-Wdeprecated-declarations]
+  393 |     class const_mem_fun1_t : public boost::functional::detail::binary_function<const T*, A, S>
+      |                                                                ^~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:131:12: note: declared here
+  131 |     struct binary_function
+      |            ^~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:438:61: warning: 'template<class _Arg, class _Result> struct std::unary_function' is deprecated [-Wdeprecated-declarations]
+  438 |     class mem_fun_ref_t : public boost::functional::detail::unary_function<T&, S>
+      |                                                             ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:117:12: note: declared here
+  117 |     struct unary_function
+      |            ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:454:62: warning: 'template<class _Arg1, class _Arg2, class _Result> struct std::binary_function' is deprecated [-Wdeprecated-declarations]
+  454 |     class mem_fun1_ref_t : public boost::functional::detail::binary_function<T&, A, S>
+      |                                                              ^~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:131:12: note: declared here
+  131 |     struct binary_function
+      |            ^~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:470:67: warning: 'template<class _Arg, class _Result> struct std::unary_function' is deprecated [-Wdeprecated-declarations]
+  470 |     class const_mem_fun_ref_t : public boost::functional::detail::unary_function<const T&, S>
+      |                                                                   ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:117:12: note: declared here
+  117 |     struct unary_function
+      |            ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:487:68: warning: 'template<class _Arg1, class _Arg2, class _Result> struct std::binary_function' is deprecated [-Wdeprecated-declarations]
+  487 |     class const_mem_fun1_ref_t : public boost::functional::detail::binary_function<const T&, A, S>
+      |                                                                    ^~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:131:12: note: declared here
+  131 |     struct binary_function
+      |            ^~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:533:73: warning: 'template<class _Arg, class _Result> struct std::unary_function' is deprecated [-Wdeprecated-declarations]
+  533 |     class pointer_to_unary_function : public boost::functional::detail::unary_function<Arg,Result>
+      |                                                                         ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:117:12: note: declared here
+  117 |     struct unary_function
+      |            ^~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/boost/1.80.0-ee7655da280415252b8b334e18473a5c/include/boost/functional.hpp:557:74: warning: 'template<class _Arg1, class _Arg2, class _Result> struct std::binary_function' is deprecated [-Wdeprecated-declarations]
+  557 |     class pointer_to_binary_function : public boost::functional::detail::binary_function<Arg1,Arg2,Result>
+      |                                                                          ^~~~~~~~~~~~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/external/gcc/12.3.1-40d504be6370b5a30e3947a6e575ca28/include/c++/12.3.1/bits/stl_function.h:131:12: note: declared here
+  131 |     struct binary_function
+      |            ^~~~~~~~~~~~~~~
+In file included from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/TrackReco/interface/Track.h:20,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/VertexReco/interface/Vertex.h:25,
+                 from /cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/PatCandidates/interface/PackedGenParticle.h:12,
+                 from readers/DelphesCMSFWLite.cpp:54:
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/TrackReco/interface/TrackExtra.h:114:70: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+  114 |     CovarianceMatrix &fillOuter CMS_THREAD_SAFE(CovarianceMatrix &v) const;
+      |                                                                      ^~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/TrackReco/interface/TrackExtra.h:116:70: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+  116 |     CovarianceMatrix &fillInner CMS_THREAD_SAFE(CovarianceMatrix &v) const;
+      |                                                                      ^~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/TrackReco/interface/Track.h:74:70: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+   74 |     CovarianceMatrix& fillOuter CMS_THREAD_SAFE(CovarianceMatrix& v) const { return extra_->fillOuter(v); }
+      |                                                                      ^~~~~
+/cvmfs/cms.cern.ch/el9_amd64_gcc12/cms/cmssw/CMSSW_15_0_0/src/DataFormats/TrackReco/interface/Track.h:76:70: warning: 'cms::thread_safe' scoped attribute directive ignored [-Wattributes]
+   76 |     CovarianceMatrix& fillInner CMS_THREAD_SAFE(CovarianceMatrix& v) const { return extra_->fillInner(v); }
+      |                                                                      ^~~~~
+>> Copying ModulesDict_rdict.pcm
+>> Compiling tmp/modules/ModulesDict.cc
+>> Building libDelphesNoFastJet.so
+>> Building libDelphes.so
+>> Building hepmc2pileup
+>> Building lhco2root
+>> Building pileup2root
+>> Building root2lhco
+>> Building root2pileup
+>> Building stdhep2pileup
+>> Building CaloGrid
+>> Building Example1
+>> Building DelphesHepMC2
+>> Building DelphesHepMC3
+>> Building DelphesLHEF
+>> Building DelphesROOT
+>> Building DelphesSTDHEP
+>> Building DelphesCMSFWLite
