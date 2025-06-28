@@ -73,16 +73,46 @@ With no input_file, or when input_file is -, Delphes reads standard input.
 For example:
 ```
 [ -f "./belphes-examples/pp_z_bb.root" ] && rm "./belphes-examples/pp_z_bb.root"
-./DelphesHepMC2 ./cards/delphes_card_CMS.tcl ./belphes-examples/pp_z_bb.root ./belphes-examples/pp_z_bb.hepmc
+./DelphesHepMC2 ./cards/belphes_card_CMS.tcl ./belphes-examples/pp_z_bb.root ./belphes-examples/pp_z_bb.hepmc
 ```
 
 ## What has changed?
 
 I wrote a new class `PseudoBTagScore` (under `belphes/modules`). 
 
+The class samples from two .root files containing histograms of Jet_btagDeepFlavB 
+values compiled from CMS open data (https://opendata.cern.ch/record/67727). 
+Each histogram is determined by abs(Eta) and PT. One file is for the bottom jets,
+and the other is for the non-bottom jets. The two histograms are under `btagscore_histograms/`.
+
+The user should apply the `cards/belphes_card_CMS.tcl` or add the `PseudoBTagScore`
+module to any card they wish. The input section looks as follows:
+```
+#################
+# PseudoBTagScore
+#################
+
+module PseudoBTagScore PseudoBTagScore {
+  set JetInputArray JetEnergyScale/jets
+  
+  set Jet_btagDeepFlavB_file_b    "btagscore_histograms/JetBtagDeepFlavB_B_Distributions.root"
+  set Jet_btagDeepFlavB_file_nonb "btagscore_histograms/JetBtagDeepFlavB_NonB_Distributions.root"
+
+  set PTBins     {20 30 40 50 60 70 80 90 100 120 140 160 180 200 250 300 400 600 1000}
+  set AbsEtaBins {0.0 0.5 1.0 1.5 2.0 2.5}
+
+  # optional: if non-zero, seeds the random number generator
+  set RandomSeed 0
+}
+```
+
+If a new set of histogram .root files is used, PTBins and AbsEtaBins must be updated.
+
+
 The following files have also been modified:
-- `Makefile`, `modules/ModulesLinkDef.h`: to compile PseudoBTagScore
-- `modules/TreeWriter`, `classes/DelphesClasses`: to include Jet_btagDeepFlavB as a class member variable
+- `Makefile`, `modules/ModulesLinkDef.h`: to compile PseudoBTagScore;
+- `modules/TreeWriter`, `classes/DelphesClasses`: to include Jet_btagDeepFlavB as a class member variable under the Jet class;
+
 
 
 <!-- Let's simulate some Z->ee events:
