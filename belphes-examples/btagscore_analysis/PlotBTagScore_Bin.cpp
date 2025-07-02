@@ -2,6 +2,14 @@
 /*
     Given a belphes file, plot the pseudo b-tag score of all jets that fall into
     a certain interval.
+
+    int PlotBTagScore_Bin(
+    const std::string&           input_file_dir,
+    const std::vector<Float_t>&  pt_interval,
+    const std::vector<Float_t>&  abs_eta_interval,
+    const std::string&           output_folder="../figs/")
+
+    29 June 2025
 */
 #include <ROOT/RDataFrame.hxx>
 #include <TCanvas.h>
@@ -12,20 +20,24 @@
 #include <iomanip>
 #include <vector>
 #include <string>
+#include <cstdlib>
 
 ROOT::RVec<Float_t> GetBTagDeepFlavB(
     const ROOT::RVec<Float_t>&   Jet_Eta,
     const ROOT::RVec<Float_t>&   Jet_PT,
     const std::vector<Float_t>&  abs_eta_interval,
     const std::vector<Float_t>&  pt_interval,
-    const ROOT::RVec<Float_t>&   Jet_btagDeepFlavB)
+    const ROOT::RVec<Float_t>&   Jet_btagDeepFlavB,
+    const ROOT::RVec<UInt_t>&    Jet_Flavor)
 {
     ROOT::RVec<Float_t> ret;
     for (size_t i = 0; i < Jet_Eta.size(); ++i) {
         Float_t aeta = std::abs(Jet_Eta[i]);
         Float_t pt   = Jet_PT[i];
+        UInt_t  flav = Jet_Flavor[i];
         if (aeta >= abs_eta_interval[0] && aeta < abs_eta_interval[1] &&
-            pt   >= pt_interval[0]      && pt   < pt_interval[1]) {
+            pt   >= pt_interval[0]      && pt   < pt_interval[1]      &&
+            flav == 5) {
             ret.emplace_back(Jet_btagDeepFlavB[i]);
         }
     }
@@ -68,11 +80,12 @@ int PlotBTagScore_Bin(
     auto df2 = df.Define("selBTags",
         [&](const ROOT::RVec<Float_t>& eta,
             const ROOT::RVec<Float_t>& pt,
-            const ROOT::RVec<Float_t>& btag)
+            const ROOT::RVec<Float_t>& btag,
+            const ROOT::RVec<UInt_t>&  flavor)
         {
-            return GetBTagDeepFlavB(eta, pt, abs_eta_interval, pt_interval, btag);
+            return GetBTagDeepFlavB(eta, pt, abs_eta_interval, pt_interval, btag, flavor);
         },
-        {"Jet.Eta", "Jet.PT", "Jet.Jet_btagDeepFlavB"})
+        {"Jet.Eta", "Jet.PT", "Jet.Jet_btagDeepFlavB", "Jet.Flavor"})
       .Filter("selBTags.size()>0");  // keep only events with ≥1 jet in bin
 
     // 4) book a histogram of all selected scores
