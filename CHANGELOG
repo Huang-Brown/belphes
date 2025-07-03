@@ -1,3 +1,9 @@
+Belphs 1.0.0:
+
+- introduced PseudoBTagScore module that gives a pseudo b-tag score "Jet_btagDeepFlavB" per jet according to flavor, pt, abs(eta), and input histogram
+
+=================== =================== ===================
+
 3.5.0:
 
 - fixed validation code
