@@ -5,4 +5,5 @@ histograms that supply the distributions, and the bin numbers of PT and abs(eta)
 plots a comparison between the Jet_btagDeepFlavB score in the .root file of the 
 related PT and abs(eta) values and compares it with the distribution given. 
 
-The Chi-sq score is given by first normalizing the observed data (O) and the expected distribution (E), then summing `(O-E)^2 / E` across all bins.
+    The Chi-sq score is given by first normalizing the observed data (O) and the
+  expected distribution (E), then summing `(O-E)^2 / E` across all bins. 
