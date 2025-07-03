@@ -1,0 +1,8 @@
+# Ignore everything 
+*
+
+# but not these:
+!pp_z_bb_1M/
+!Sample_B_Distributions/
+!Sample_NonB_Distributions/
+!.gitignore
