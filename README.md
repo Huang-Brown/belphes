@@ -78,12 +78,13 @@ For example:
 
 ## What has changed?
 
-I wrote a new class `PseudoBTagScore` (under `belphes/modules`). 
+I wrote a new class `PseudoBTagScore` (under `belphes/modules`).
 
 The class samples from two .root files containing histograms of Jet_btagDeepFlavB 
 values compiled from CMS open data (https://opendata.cern.ch/record/67727). 
 Each histogram is determined by abs(Eta) and PT. One file is for the bottom jets,
 and the other is for the non-bottom jets. The two histograms are under `btagscore_histograms/`.
+The new value is stored under **"Jet.Jet_btagDeepFlavB"**.
 
 The user should apply the `cards/belphes_card_CMS.tcl` or add the `PseudoBTagScore`
 module to any card they wish. The input section looks as follows:
