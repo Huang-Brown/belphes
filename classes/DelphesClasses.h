@@ -423,8 +423,10 @@ public:
   TLorentzVector Area;
 
   Float_t Jet_btagDeepFlavB; // pseudo b-tag score, added on 25-06-26
+  Float_t Jet_btagDeepFlavCvB; // pseudo DeepJet c vs b+bb+lepb discriminant
+  Float_t Jet_btagDeepFlavCvL; // pseudo DeepJet c vs uds+g discriminant
 
-  ClassDef(Jet, 6)
+  ClassDef(Jet, 7)
 };
 
 //---------------------------------------------------------------------------
@@ -716,6 +718,8 @@ public:
   UInt_t BTagPhys;
 
   Float_t Jet_btagDeepFlavB;
+  Float_t Jet_btagDeepFlavCvB;
+  Float_t Jet_btagDeepFlavCvL;
 
   UInt_t TauTag;
   Float_t TauWeight;

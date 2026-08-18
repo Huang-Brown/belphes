@@ -395,6 +395,7 @@ tmp/modules/ModulesDict.$(SrcSuf): \
 	modules/TrackCountingBTagging.h \
 	modules/BTagging.h \
 	modules/PseudoBTagScore.h \
+	modules/PseudoDeepFlavScore.h \
 	modules/TauTagging.h \
 	modules/TrackCountingTauTagging.h \
 	modules/TreeWriter.h \
@@ -666,6 +667,10 @@ tmp/modules/PseudoBTagScore.$(ObjSuf): \
 	modules/PseudoBTagScore.$(SrcSuf) \
 	modules/PseudoBTagScore.h \
 	classes/DelphesFactory.h \
+	classes/DelphesClasses.h
+tmp/modules/PseudoDeepFlavScore.$(ObjSuf): \
+	modules/PseudoDeepFlavScore.$(SrcSuf) \
+	modules/PseudoDeepFlavScore.h \
 	classes/DelphesClasses.h
 tmp/modules/BeamSpotFilter.$(ObjSuf): \
 	modules/BeamSpotFilter.$(SrcSuf) \
@@ -1262,6 +1267,7 @@ DELPHES_OBJ +=  \
 	tmp/modules/PileUpJetID.$(ObjSuf) \
 	tmp/modules/PileUpMerger.$(ObjSuf) \
 	tmp/modules/PseudoBTagScore.$(ObjSuf) \
+	tmp/modules/PseudoDeepFlavScore.$(ObjSuf) \
 	tmp/modules/RecoPuFilter.$(ObjSuf) \
 	tmp/modules/SimpleCalorimeter.$(ObjSuf) \
 	tmp/modules/StatusPidFilter.$(ObjSuf) \
@@ -2294,6 +2300,9 @@ modules/BTagging.h: \
 modules/PseudoBTagScore.h: \
 	classes/DelphesModule.h \
 	classes/DelphesClasses.h
+	@touch $@
+modules/PseudoDeepFlavScore.h: \
+	classes/DelphesModule.h
 	@touch $@
 modules/RecoPuFilter.h: \
 	classes/DelphesModule.h

@@ -1,0 +1,7 @@
+# Downloaded open data and everything derived from it
+data/
+*.root
+
+# Compiled tools
+build_templates
+validate_templates
