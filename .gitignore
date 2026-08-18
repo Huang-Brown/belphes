@@ -2,9 +2,13 @@
 *.swp
 *.swo
 *bk
+.vscode/
 CaloGrid
 ClassesDict_rdict.pcm
+DelphesCMSFWLite
 DelphesHepMC
+DelphesHepMC2
+DelphesHepMC3
 DelphesLHEF
 DelphesROOT
 DelphesSTDHEP
@@ -13,6 +17,7 @@ ExRootAnalysisDict_rdict.pcm
 Example1
 FastJetDict_rdict.pcm
 ModulesDict_rdict.pcm
+belphes-*.tar.gz
 hepmc2pileup
 lhco2root
 libDelphes.so

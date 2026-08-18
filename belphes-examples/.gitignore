@@ -1,0 +1,10 @@
+# Ignore 
+*.hepmc
+*.gz
+*.hepmc.gz
+*.root
+
+# Ignore folders
+scripts/
+example_distributions/
+condor/
