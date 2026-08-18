@@ -285,15 +285,19 @@ int main(int argc, char **argv)
   Int_t nEmpty = 0, nThin = 0;
   Double_t minEntries = -1;
   TString minCell;
+  std::vector<std::pair<Double_t, TString>> thin;
   for(Int_t f = 0; f < nFlav; ++f)
     for(Int_t e = 0; e < nEta; ++e)
       for(Int_t p = 0; p < nPt; ++p)
       {
         const Double_t n = hist[f][e][p]->GetEntries();
         if(n <= 0) ++nEmpty;
-        else if(n < cfg.minCellEntries) ++nThin;
+        else if(n < cfg.minCellEntries) { ++nThin; thin.emplace_back(n, hist[f][e][p]->GetName()); }
         if(minEntries < 0 || n < minEntries) { minEntries = n; minCell = hist[f][e][p]->GetName(); }
       }
+  std::sort(thin.begin(), thin.end(),
+            [](const std::pair<Double_t, TString> &a, const std::pair<Double_t, TString> &b)
+            { return a.first < b.first; });
 
   fout->Write();
   fout->Close();
@@ -304,10 +308,26 @@ int main(int argc, char **argv)
   std::printf("    cells under %-10lld : %d\n", cfg.minCellEntries, nThin);
   std::printf("    sparsest cell          : %s (%.0f entries)\n", minCell.Data(), minEntries);
 
+  const Int_t nScoreBins = nScoreB * nScoreCvL;
+
   if(nEmpty > 0)
     std::printf("\nWARNING: %d empty cell(s). TH2::GetRandom2 returns (0,0) for an empty\n"
-                "         histogram, so the module must treat these as unusable rather\n"
-                "         than sample them. Widen the bins or add input files.\n", nEmpty);
+                "         histogram, so PseudoDeepFlavScore refuses to load a file\n"
+                "         containing any. Widen the bins or add input files.\n", nEmpty);
+
+  if(nThin > 0)
+  {
+    std::printf("\nWARNING: %d cell(s) below MinCellEntries = %lld. These are not empty,\n"
+                "         so they will load, but a cell with N entries spread over %d bins\n"
+                "         samples as a comb of at most N spikes rather than a distribution.\n",
+                nThin, cfg.minCellEntries, nScoreBins);
+    std::printf("         Sparsest %d:\n", int(std::min<size_t>(thin.size(), 8)));
+    for(size_t i = 0; i < thin.size() && i < 8; ++i)
+      std::printf("           %-24s %6.0f entries (%.3f per bin)\n",
+                  thin[i].second.Data(), thin[i].first, thin[i].first / nScoreBins);
+    std::printf("         Fix by coarsening PtBins/AbsEtaBins in the forward, high-pt\n"
+                "         corner, or by lowering the score resolution.\n");
+  }
 
   return 0;
 }

@@ -218,11 +218,22 @@ void PseudoDeepFlavScore::Finish()
   }
 
   // Quiet unless something is actually off, so a normal run stays clean.
-  if(fNScored > 0 && fNNoFlavor == fNScored)
+  //
+  // Note this deliberately does NOT test the DefaultFlavor fallback counter:
+  // DefaultFlavor (0) is itself a valid template key, so a card missing
+  // JetFlavorAssociation gives every jet Flavor==0, the lookup succeeds, and
+  // the fallback never trips. What matters is whether any jet reached a
+  // heavy-flavour template at all.
+  const Long64_t nHeavy = (fNByFlavor.count(5) ? fNByFlavor[5] : 0)
+                        + (fNByFlavor.count(4) ? fNByFlavor[4] : 0);
+  if(fNScored > 0 && nHeavy == 0)
   {
     cout << "** WARNING: PseudoDeepFlavScore scored " << fNScored
-         << " jets but none carried a b or c flavour. Is JetFlavorAssociation "
-            "in the ExecutionPath before this module?" << endl;
+         << " jets, none of them b or c. Every jet was sampled from the "
+            "light template, so b-tagging efficiency will come out at the "
+            "mistag rate." << endl;
+    cout << "**          Is JetFlavorAssociation in the ExecutionPath before "
+            "this module?" << endl;
   }
   if(fNUnscored > 0)
   {
@@ -283,6 +294,7 @@ void PseudoDeepFlavScore::Process()
       itFlavor = fTemplates.find(fDefaultFlavor);
       ++fNNoFlavor;
     }
+    ++fNByFlavor[itFlavor->first];
 
     Double_t B = 0.0, CvL = 0.0;
     itFlavor->second[etaBin][ptBin]->GetRandom2(B, CvL, fRandom);

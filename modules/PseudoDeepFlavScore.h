@@ -57,7 +57,8 @@ private:
 
   Long64_t fNScored; //!
   Long64_t fNUnscored; //!
-  Long64_t fNNoFlavor; //!
+  Long64_t fNNoFlavor; //!< jets whose Flavor had no template of its own
+  std::map<Int_t, Long64_t> fNByFlavor; //!< jets actually drawn per template
 
   ClassDef(PseudoDeepFlavScore, 1)
 };

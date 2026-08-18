@@ -121,10 +121,18 @@ files. Not for physics.
     sparsest cell          : tmpl_f5_eta4_pt17 (0 entries)
 ```
 
-**Empty cells are the thing to watch.** `PseudoDeepFlavScore` refuses to load a
-template file containing any, because `TH2::GetRandom2` hands back `(0,0)` for
-an empty histogram — a legal-looking score that is silently wrong. Fix by
-widening bins or adding input files.
+**Empty cells are fatal.** `PseudoDeepFlavScore` refuses to load a template file
+containing any, because `TH2::GetRandom2` hands back `(0,0)` for an empty
+histogram — a legal-looking score that is silently wrong.
+
+**Thin cells are not fatal, and that is the thing to watch.** A cell with N
+entries spread over 2500 bins loads fine but samples as a comb of at most N
+spikes. `build_templates` names the sparsest offenders and reports entries per
+bin; `MinCellEntries` sets the threshold for that report. It does not currently
+reject them — on the full 17.6 GB record the forward, high-pt b cell holds
+about 114 entries, i.e. 0.05 per bin, so this is a real condition and not a
+hypothetical. Coarsen `PtBins`/`AbsEtaBins` in that corner, or lower the score
+resolution, until the report is clean.
 
 ### Why the templates are 2-D
 
